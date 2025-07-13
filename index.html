@@ -1,284 +1,168 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl"> <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SeaStarQR - تطبيق إنشاء ومسح QR Code</title>
+    <title>SeaStarQR</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+</head>
 <body>
+    <div id="toast-message" class="toast"></div>
+    <div id="main-spinner" class="spinner hidden"></div>
 
-    <header class="app-header">
-        <h2>SeaStarQR</h2>
-        <nav class="main-nav">
-            <button class="nav-btn active" data-page="home">الرئيسية 🏠</button>
-            <button class="nav-btn" data-page="create-qr">إنشاء QR ➕</button>
-            <button class="nav-btn" data-page="scan-qr">مسح QR 📸</button>
-            <button class="nav-btn" data-page="my-qrs">رمز QR الخاص بي 📊</button>
-            <button class="nav-btn" data-page="settings">الإعدادات ⚙️</button>
-        </nav>
-    </header>
-
-    <main class="app-content">
-
-        <section id="home-page" class="app-page current">
-            <h1 class="page-title">مرحباً بك في SeaStarQR!</h1>
-            <p>حلولك الشاملة لإنشاء ومسح وإدارة رموز QR بسهولة.</p>
-            <div class="quick-actions">
-                <button class="btn primary-btn" data-action="go-to-create">إنشاء رمز QR جديد ✨</button>
-                <button class="btn secondary-btn" data-action="go-to-scan">بدء المسح الآن 🚀</button>
+    <div id="login-page" class="app-page hidden">
+        <div class="login-container">
+            <h1>SeaStarQR</h1>
+            <p>Create dynamic QR codes with just a few taps!</p>
+            <div id="login-buttons">
+                <button id="google-login-btn" class="btn primary-btn">Login with Google</button>
+                <button id="apple-login-btn" class="btn primary-btn">Login with Apple</button>
+                <button id="guest-login-btn" class="btn secondary-btn">Continue as Guest</button>
+                <div id="auth-spinner" class="spinner small hidden"></div>
             </div>
+        </div>
+    </div>
+
+    <div id="app-content" class="app-content hidden">
+        <header class="app-header">
+            <h2>SeaStarQR</h2>
+            <nav class="main-nav">
+                <button id="home-btn" class="nav-btn active">Home</button>
+                <button id="create-qr-btn" class="nav-btn">Create</button>
+                <button id="scan-qr-btn" class="nav-btn">Scan</button>
+                <button id="my-qrs-btn" class="nav-btn">My QRs</button>
+                <button id="settings-btn" class="nav-btn">Settings</button>
+                <button id="logout-btn" class="btn secondary-btn">Logout</button>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <section id="home-page" class="app-page hidden">
+                <h1 id="welcome-message">Welcome!</h1>
+                <p>Your ultimate tool for dynamic QR code creation and management.</p>
+                <div class="quick-actions">
+                    <button class="btn primary-btn" onclick="Utils.navigateTo('create-qr')">Create New QR</button>
+                    <button class="btn secondary-btn" onclick="Utils.navigateTo('scan')">Scan QR Code</button>
+                    <button class="btn secondary-btn" onclick="Utils.navigateTo('history')">View History</button>
+                </div>
             </section>
 
-        <section id="create-qr-page" class="app-page hidden">
-            <button class="back-btn" data-action="back-from-create-qr">العودة 🔙</button>
-            <h1 class="page-title">إنشاء رمز QR جديد</h1>
+            <section id="create-qr-page" class="app-page hidden qr-creation-wizard">
+                <h2 class="page-title">Create QR Code</h2>
 
-            <div id="qr-type-step" class="qr-creation-step">
-                <h3>اختر نوع رمز QR:</h3>
-                <div class="qr-type-grid">
-                    <div class="qr-type-card" data-type="url">
-                        <span class="icon">🔗</span>
-                        <span class="name">رابط URL</span>
+                <div id="type-selection-step" class="qr-creation-step hidden">
+                    <h3>1. Select QR Type</h3>
+                    <div id="qr-type-selection" class="qr-type-grid">
+                        // QR type cards will be rendered here by JS
                     </div>
-                    <div class="qr-type-card" data-type="text">
-                        <span class="icon">📝</span>
-                        <span class="name">نص عادي</span>
-                    </div>
-                    <div class="qr-type-card" data-type="email">
-                        <span class="icon">📧</span>
-                        <span class="name">بريد إلكتروني</span>
-                    </div>
-                    <div class="qr-type-card" data-type="phone">
-                        <span class="icon">📞</span>
-                        <span class="name">هاتف</span>
-                    </div>
-                    <div class="qr-type-card" data-type="sms">
-                        <span class="icon">💬</span>
-                        <span class="name">رسالة SMS</span>
-                    </div>
-                    <div class="qr-type-card" data-type="wifi">
-                        <span class="icon">📶</span>
-                        <span class="name">شبكة Wi-Fi</span>
-                    </div>
-                    <div class="qr-type-card" data-type="vcard">
-                        <span class="icon">👤</span>
-                        <span class="name">بطاقة عمل (VCard)</span>
-                    </div>
-                    <div class="qr-type-card" data-type="location">
-                        <span class="icon">📍</span>
-                        <span class="name">موقع جغرافي</span>
-                    </div>
-                    <div class="qr-type-card" data-type="event">
-                        <span class="icon">📅</span>
-                        <span class="name">حدث (تقويم)</span>
-                    </div>
-                    </div>
-                <button class="btn primary-btn hidden" id="next-to-content-btn">التالي (تحديد المحتوى) ➡️</button>
-            </div>
-
-            <div id="content-editor-step" class="qr-creation-step hidden">
-                <h3 id="content-editor-title">أدخل المحتوى لـ: <span></span></h3>
-                <form id="qr-content-form">
-                    <button type="button" class="btn primary-btn" id="next-to-design-btn">التالي (التصميم) 🎨</button>
-                    <button type="button" class="btn secondary-btn" id="back-to-type-btn">السابق (النوع) ⬅️</button>
-                </form>
-
-                <div class="dynamic-qr-options hidden" id="dynamic-qr-section">
-                    <h4>خيارات QR الديناميكي</h4>
-                    <p>قم بإنشاء قواعد مختلفة لتوجيه المستخدمين بناءً على الجهاز، الموقع، أو الوقت.</p>
-                    <div id="dynamic-rules-container">
-                        </div>
-                    <button class="btn secondary-btn" id="add-dynamic-rule-btn">إضافة قاعدة ديناميكية ➕</button>
                 </div>
-            </div>
 
-            <div id="design-editor-step" class="qr-creation-step hidden">
-                <h3 class="mb-lg">تخصيص تصميم رمز QR:</h3>
-                <div class="design-layout">
-                    <div class="design-controls">
-                        <div class="form-group">
-                            <label for="qr-color">لون رمز QR:</label>
-                            <input type="color" id="qr-color" value="#000000">
-                        </div>
-                        <div class="form-group">
-                            <label for="bg-color">لون الخلفية:</label>
-                            <input type="color" id="bg-color" value="#FFFFFF">
-                        </div>
-                        <div class="form-group">
-                            <label for="corner-style">نمط الزوايا:</label>
-                            <select id="corner-style">
-                                <option value="square">مربع</option>
-                                <option value="round">دائري</option>
-                                <option value="extra-round">دائري جداً</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="logo-upload">شعار مخصص:</label>
-                            <input type="file" id="logo-upload" accept="image/*">
-                        </div>
-                        <div class="form-group">
-                            <label for="logo-shape">شكل الشعار:</label>
-                            <select id="logo-shape">
-                                <option value="square">مربع</option>
-                                <option value="round">دائري</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="error-correction">مستوى تصحيح الأخطاء (لتحمل الضرر):</label>
-                            <select id="error-correction">
-                                <option value="L">منخفض (L)</option>
-                                <option value="M">متوسط (M)</option>
-                                <option value="Q">عالي (Q)</option>
-                                <option value="H">عالي جداً (H)</option>
-                            </select>
-                        </div>
+                <div id="content-editor-step" class="qr-creation-step hidden">
+                    <button class="btn back-btn" id="back-to-type-selection">← Back</button>
+                    <h3 id="content-editor-title">2. Enter Content</h3>
+                    <div id="content-input-fields">
+                        // Dynamic input fields will be rendered here by JS
                     </div>
-                    <div class="qr-preview-container">
-                        <h4>معاينة رمز QR</h4>
-                        <div id="qr-code-preview">
+                    <button class="btn primary-btn" id="next-to-design">Next: Customize Design</button>
+                </div>
+
+                <div id="design-editor-step" class="qr-creation-step hidden">
+                    <button class="btn back-btn" id="back-to-content-editor">← Back</button>
+                    <h3>3. Customize Design</h3>
+                    <div class="design-layout">
+                        <div id="design-editor-controls" class="design-controls">
+                            // Design controls will be rendered here by JS
+                        </div>
+                        <div class="qr-preview-container">
+                            <h4>Live QR Preview</h4>
+                            <div id="qr-code-preview" class="qr-code-preview">
+                                // QR code will be rendered here by JS
                             </div>
-                        <div class="qr-preview-info">
-                            <h4 id="preview-content-title"></h4>
-                            <p id="preview-content-value"></p>
                         </div>
-                        <button class="btn secondary-btn" id="download-qr-btn">تنزيل QR ⬇️</button>
                     </div>
+                    <button class="btn primary-btn" id="generate-qr-btn">Generate QR Code</button>
+                    <button class="btn secondary-btn" id="download-qr-btn">Download Preview</button>
                 </div>
-                <div class="button-group" style="margin-top: var(--spacing-xl); display: flex; justify-content: space-between;">
-                    <button type="button" class="btn secondary-btn" id="back-to-content-btn">السابق (المحتوى) ⬅️</button>
-                    <button type="submit" class="btn primary-btn" id="save-qr-btn">حفظ رمز QR ✨</button>
+            </section>
+
+            <section id="scan-page" class="app-page hidden">
+                <h2 class="page-title">Scan QR Code</h2>
+                <div id="reader" style="width: 100%; height: 400px;"></div>
+                <div class="scan-controls">
+                    <button id="stop-scan-btn" class="btn secondary-btn">Stop Scan</button>
+                    <input type="file" id="qr-image-input" accept="image/*" class="hidden">
+                    <button id="upload-image-scan-btn" class="btn secondary-btn">Scan from Image</button>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="scan-qr-page" class="app-page hidden">
-            <h1 class="page-title">مسح رمز QR</h1>
-            <div id="reader">
+            <section id="history-page" class="app-page hidden">
+                <h2 class="page-title">History</h2>
+                <div class="tabs" id="history-tabs">
+                    <button id="history-tab-scanned" class="tab-button active">Scanned</button>
+                    <button id="history-tab-favorites" class="tab-button">Favorites</button>
                 </div>
-            <div class="scan-controls">
-                <button class="btn primary-btn" id="start-scan-btn">بدء المسح 🚀</button>
-                <button class="btn secondary-btn" id="stop-scan-btn" disabled>إيقاف المسح ⏸️</button>
-            </div>
-            <div class="scan-result" style="margin-top: var(--spacing-lg); text-align: center;">
-                <h3>النتائج:</h3>
-                <p id="scan-result-text">امسح رمز QR لعرض النتائج هنا.</p>
-                <button class="btn secondary-btn hidden" id="copy-scan-result-btn">نسخ النتيجة 📋</button>
-                <a href="#" target="_blank" class="btn primary-btn hidden" id="open-scan-result-btn">فتح الرابط 🌐</a>
-            </div>
-        </section>
+                <div id="history-list-container" class="item-list">
+                    // Scanned and Favorite items will be rendered here
+                </div>
+            </section>
 
-        <section id="my-qrs-page" class="app-page hidden">
-            <h1 class="page-title">رموز QR وسجلاتي</h1>
-
-            <div class="tabs">
-                <button class="tab-button active" data-tab="my-qrs">رموز QR الخاصة بي 📁</button>
-                <button class="tab-button" data-tab="history">سجل المسح 📜</button>
-            </div>
-
-            <div id="my-qrs-tab-content" class="tab-content">
+            <section id="myQRs-page" class="app-page hidden">
+                <h2 class="page-title">My QR Codes</h2>
                 <div class="filter-sort-bar">
-                    <input type="text" id="my-qrs-search" placeholder="ابحث عن رموز QR...">
-                    <select id="my-qrs-sort">
-                        <option value="date-desc">التاريخ (الأحدث أولاً)</option>
-                        <option value="date-asc">التاريخ (الأقدم أولاً)</option>
-                        <option value="name-asc">الاسم (أ-ي)</option>
+                    <input type="text" id="my-qrs-search-input" placeholder="Search by name or type...">
+                    <select id="my-qrs-filter-type">
+                        <option value="All">All Types</option>
+                        <option value="URL">URL</option>
+                        <option value="Text">Text</option>
+                        <option value="WhatsApp">WhatsApp</option>
+                        <option value="PDF">PDF</option>
+                        <option value="Image">Image</option>
+                        <option value="WiFi">WiFi</option>
+                        <option value="Booking">Booking</option>
+                        // Add more QR types dynamically
                     </select>
                 </div>
-                <div id="my-qrs-list" class="item-list">
-                    <p class="empty-state">لا توجد رموز QR محفوظة لديك حتى الآن. ابدأ بإنشاء واحدة!</p>
+                <div id="my-qrs-list-container" class="item-list">
+                    // Created QR codes will be rendered here
+                </div>
+            </section>
+
+            <section id="settings-page" class="app-page hidden">
+                <h2 class="page-title">Settings</h2>
+                <div class="settings-group">
+                    <h3>User Preferences</h3>
+                    <div class="setting-item">
+                        <span>Vibrate on Successful Scan</span>
+                        <label class="switch">
+                            <input type="checkbox" id="toggle-vibration">
+                            <span class="slider round"></span>
+                        </label>
                     </div>
-            </div>
-
-            <div id="history-tab-content" class="tab-content hidden">
-                <div class="filter-sort-bar">
-                    <input type="text" id="history-search" placeholder="ابحث في سجل المسح...">
-                    <select id="history-sort">
-                        <option value="date-desc">التاريخ (الأحدث أولاً)</option>
-                        <option value="date-asc">التاريخ (الأقدم أولاً)</option>
-                        <option value="type-asc">النوع (أ-ي)</option>
-                    </select>
-                </div>
-                <div id="scan-history-list" class="item-list">
-                    <p class="empty-state">سجل المسح الخاص بك فارغ حاليًا.</p>
+                    <div class="setting-item">
+                        <span>Auto-Open Scanned Content</span>
+                        <label class="switch">
+                            <input type="checkbox" id="toggle-auto-open">
+                            <span class="slider round"></span>
+                        </label>
                     </div>
-            </div>
-        </section>
-
-        <section id="settings-page" class="app-page hidden">
-            <h1 class="page-title">الإعدادات</h1>
-
-            <div class="settings-group">
-                <h3>الإعدادات العامة</h3>
-                <div class="setting-item">
-                    <span>تفعيل الإشعارات</span>
-                    <label class="switch">
-                        <input type="checkbox" id="notifications-toggle" checked>
-                        <span class="slider round"></span>
-                    </label>
                 </div>
-                <div class="setting-item">
-                    <span>الوضع المظلم</span>
-                    <label class="switch">
-                        <input type="checkbox" id="dark-mode-toggle">
-                        <span class="slider round"></span>
-                    </label>
+                <div class="settings-group" id="account-management-section">
+                    <h3>Account Management</h3>
+                    <p>Logged in as: <span id="current-user-name">Guest</span></p>
+                    <button id="delete-account-btn" class="btn danger-btn">Delete Account</button>
                 </div>
-                <div class="setting-item">
-                    <span>اللغة</span>
-                    <select id="language-select">
-                        <option value="ar">العربية</option>
-                        <option value="en">English</option>
-                        </select>
+                <div class="settings-group">
+                    <h3>Support & About</h3>
+                    <button id="send-feedback-btn" class="btn secondary-btn">Send Feedback</button>
+                    <button id="view-pricing-btn" class="btn secondary-btn">View Pricing Plans</button>
                 </div>
-            </div>
+            </section>
+        </main>
+    </div>
 
-            <div class="settings-group">
-                <h3>إعدادات الماسح الضوئي</h3>
-                <div class="setting-item">
-                    <span>الكاميرا الافتراضية:</span>
-                    <select id="default-camera-select">
-                        <option value="environment">الكاميرا الخلفية</option>
-                        <option value="user">الكاميرا الأمامية</option>
-                    </select>
-                </div>
-                <div class="setting-item">
-                    <span>صوت المسح</span>
-                    <label class="switch">
-                        <input type="checkbox" id="scan-sound-toggle" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="setting-item">
-                    <span>اهتزاز عند المسح</span>
-                    <label class="switch">
-                        <input type="checkbox" id="scan-vibrate-toggle" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="settings-group" id="account-management-section">
-                <h3>إدارة الحساب</h3>
-                <p>أنت مسجل الدخول باسم: <span id="current-user-name">ضيف</span></p>
-                <button class="btn danger-btn" id="logout-btn">تسجيل الخروج 🚪</button>
-                <button class="btn secondary-btn" id="delete-account-btn">حذف الحساب ⚠️</button>
-            </div>
-
-            <div class="settings-group">
-                <h3>حول التطبيق</h3>
-                <p>SeaStarQR - الإصدار 1.0.0</p>
-                <p>تم التطوير بواسطة: [اسم المطور/الشركة]</p>
-                <p><a href="#">سياسة الخصوصية</a> | <a href="#">شروط الخدمة</a></p>
-            </div>
-        </section>
-
-    </main>
-
-    <div id="global-spinner" class="spinner hidden"></div>
-
-    <div id="toast-message" class="toast"></div>
-
+    // External Libraries (include these via CDN or local download)
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode.js/1.0.0/qrcode.min.js"></script>
     <script src="app.js"></script>
-    </body>
+</body>
 </html>
-
