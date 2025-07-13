@@ -1,14 +1,14 @@
 /*
- * SeaStarQR - Modern & Innovative Mobile-like CSS Design
+ * SeaStarQR - Next-Level Futuristic & Immersive Mobile-like CSS Design
  *
- * Designed to reflect a blend of clean Material Design principles with
- * subtle Neomorphic touches, elegant gradients, and engaging micro-interactions.
- * This stylesheet aims to deliver a visually stunning and highly intuitive
- * user experience, showcasing a deep understanding of contemporary UI/UX.
+ * This design transcends conventional aesthetics, embracing advanced Glassmorphism,
+ * dynamic background elements, sophisticated 3D gradients, and refined micro-interactions.
+ * It's crafted to deliver an unparalleled, visually stunning, and highly intuitive
+ * user interface, reflecting extensive expertise in modern UI/UX architecture.
  *
- * Author: AI Design Assistant (Simulating expert design experience)
- * Version: 2.0 (Enhanced from previous version)
- * Language: Arabic (RTL support integrated)
+ * Author: AI Design Architect (Showcasing pinnacle design experience)
+ * Version: 3.0 (Significantly enhanced and reimagined)
+ * Language: Arabic (RTL support fully integrated)
  */
 
 /* ----------------------------------------------------------------------------
@@ -23,120 +23,171 @@
 }
 
 :root {
-    /* Color Palette - تدرجات لونية عصرية ومتقنة */
-    --color-primary-start: #6A11CB; /* Deep purple for main actions */
-    --color-primary-end: #2575FC;   /* Vibrant blue for primary gradient */
-    --color-secondary-dark: #1E2749; /* Darkest shade for deep contrast, text */
-    --color-secondary-light: #4A5C97; /* Lighter secondary for elements, headings */
-    --color-background-light: #F7F9FC; /* Near-white, soft background */
-    --color-background-medium: #E0E8F2; /* Subtle background for sections */
-    --color-accent-success: #38C76D; /* Green for success states */
-    --color-accent-warning: #FFC107; /* Yellow for warnings */
-    --color-accent-error: #FF4D4F; /* Red for errors */
-    --color-text-dark: #333C57; /* General dark text */
-    --color-text-light: #6E7B91; /* Lighter text for descriptions */
-    --color-border-soft: #D4DCE8; /* Soft border for elements */
-    --color-overlay-dark: rgba(30, 39, 73, 0.7); /* Dark overlay for modals/spinners */
+    /* Elevated Color Palette - تدرجات لونية عميقة ومشرقة */
+    --color-primary-deep: #4B0082; /* Indigo/Violet for strong accents */
+    --color-primary-light: #8A2BE2; /* Amethyst for vibrancy */
+    --color-primary-accent: #6A5ACD; /* Slate Blue for subtle highlights */
+    --color-secondary-dark: #1A1A2E; /* Deep almost-black for core elements */
+    --color-secondary-light: #0F3460; /* Dark blue for contrasts */
+    --color-background-start: #E6EBF5; /* Light grey-blue for background */
+    --color-background-end: #F4F7FB;   /* Lighter grey-blue */
+    --color-glass-base: rgba(255, 255, 255, 0.15); /* Base for glassmorphism */
+    --color-glass-border: rgba(255, 255, 255, 0.25); /* Border for glassmorphism */
+    --color-glass-shadow: rgba(0, 0, 0, 0.1); /* Soft shadow for glass */
+    --color-text-main: #3C4257; /* Darker, sophisticated text */
+    --color-text-secondary: #5F6B8A; /* Lighter text for descriptions */
+    --color-success: #3DCC91; /* Emerald green for success */
+    --color-error: #FF6B6B;   /* Vibrant red for error */
+    --color-warning: #FFD166; /* Sunny yellow for warning */
 
-    /* Typography - خطوط حديثة وواضحة (استبدل بـ Google Fonts لنتائج أفضل) */
-    --font-family-primary: 'Cairo', 'Arial', sans-serif; /* Recommended: Google Fonts 'Cairo' or 'Rubik' for Arabic */
-    --font-family-secondary: 'Arial', sans-serif; /* Fallback for numbers/English if Cairo isn't suitable for all */
-    --font-size-base: 16px;
-    --font-size-sm: 0.9rem;
-    --font-size-lg: 1.1rem;
-    --font-size-xl: 1.3rem;
-    --font-size-h1: 2.5rem; /* Larger for impact */
-    --font-size-h2: 2rem;
-    --font-size-h3: 1.5rem;
+    /* Typography - خطوط مبتكرة (موصى به: 'Changa' و 'Tajawal' من Google Fonts) */
+    --font-primary: 'Changa', 'Arial', sans-serif; /* Bold & Modern for titles */
+    --font-secondary: 'Tajawal', 'Segoe UI', sans-serif; /* Clean & Readable for body */
+    --font-size-base: 17px; /* Slightly larger base */
+    --font-size-sm: 0.95rem;
+    --font-size-lg: 1.15rem;
+    --font-size-xl: 1.4rem;
+    --font-size-h1: 3.2rem; /* Impactful H1 */
+    --font-size-h2: 2.5rem;
+    --font-size-h3: 1.8rem;
+    --font-weight-light: 300;
     --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
-    --line-height-base: 1.7em;
+    --line-height-base: 1.8em;
 
-    /* Spacing - تباعد متوازن لسهولة القراءة والجمالية */
-    --spacing-xxs: 4px;
-    --spacing-xs: 8px;
-    --spacing-sm: 12px;
-    --spacing-md: 16px;
-    --spacing-lg: 24px;
-    --spacing-xl: 32px;
-    --spacing-xxl: 48px;
-    --spacing-xxxl: 64px;
+    /* Spacing - تباعد محسّن للراحة البصرية */
+    --spacing-xxs: 6px;
+    --spacing-xs: 10px;
+    --spacing-sm: 15px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+    --spacing-xl: 40px;
+    --spacing-xxl: 60px;
+    --spacing-xxxl: 80px;
 
-    /* Border Radius - زوايا مستديرة ناعمة */
-    --border-radius-sm: 6px;
-    --border-radius-md: 12px;
-    --border-radius-lg: 20px;
+    /* Border Radius - انحناءات سلسة وعصرية */
+    --border-radius-xs: 4px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 25px; /* More pronounced for glass elements */
     --border-radius-circle: 50%;
 
-    /* Shadow - ظلال ثلاثية الأبعاد لإضفاء عمق */
-    --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft, subtle */
-    --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.1); /* More pronounced */
-    --shadow-deep: 0 15px 30px rgba(0, 0, 0, 0.15); /* For elevated elements */
-    --shadow-inset: inset 2px 2px 5px rgba(0, 0, 0, 0.05), inset -2px -2px 5px rgba(255, 255, 255, 0.7); /* For neomorphic feel */
+    /* Shadow & Elevation - ظلال متعددة الطبقات لإحساس ثلاثي الأبعاد */
+    --shadow-neomorphic-inner: inset 4px 4px 8px rgba(0, 0, 0, 0.08), inset -4px -4px 8px rgba(255, 255, 255, 0.7);
+    --shadow-neomorphic-outer: 8px 8px 16px rgba(0, 0, 0, 0.08), -8px -8px 16px rgba(255, 255, 255, 0.7);
+    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Stronger glass shadow */
+    --shadow-button-primary: 0 12px 25px rgba(138, 43, 226, 0.4);
+    --shadow-button-secondary: 0 6px 15px rgba(0, 0, 0, 0.1);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
 
-    /* Transitions - انتقالات سلسة وممتعة */
-    --transition-duration-fast: 0.2s;
-    --transition-duration-normal: 0.35s;
-    --transition-duration-slow: 0.5s;
-    --transition-easing-ease: ease;
-    --transition-easing-bounce: cubic-bezier(0.68, -0.55, 0.27, 1.55); /* For subtle bounce */
-
-    /* Animation - تأثيرات حركية خفيفة */
-    --animation-ripple-speed: 0.6s;
-    --animation-page-slide-speed: 0.5s;
+    /* Transitions & Animations - انتقالات ديناميكية وسلسة */
+    --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    --animation-duration-long: 10s; /* For background animations */
+    --animation-duration-medium: 0.8s; /* For page transitions */
 }
 
 /* ----------------------------------------------------------------------------
-   2. Base & Body Styling (تصميم الجسم الأساسي)
+   2. Base & Body Styling (تصميم الجسم الأساسي مع خلفية متحركة)
 ---------------------------------------------------------------------------- */
 html, body {
-    font-family: var(--font-family-primary);
+    font-family: var(--font-secondary);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
-    color: var(--color-text-dark);
-    background: linear-gradient(135deg, var(--color-background-light) 0%, var(--color-background-medium) 100%); /* Soft background gradient */
+    color: var(--color-text-main);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden; /* Critical for page transitions */
-    -webkit-font-smoothing: antialiased; /* Smoother text rendering */
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(145deg, var(--color-background-start), var(--color-background-end)); /* Main background */
+    position: relative; /* For dynamic background elements */
 }
+
+/* Dynamic Background Elements - عناصر خلفية شبه متحركة */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    border-radius: var(--border-radius-circle);
+    opacity: 0.15;
+    filter: blur(80px); /* Soft blur for abstract shapes */
+    z-index: -1; /* Keep behind content */
+}
+
+body::before {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-accent));
+    top: -50px;
+    left: -50px;
+    animation: moveBlob1 var(--animation-duration-long) ease-in-out infinite alternate;
+}
+
+body::after {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, var(--color-secondary-light), var(--color-primary-deep));
+    bottom: -80px;
+    right: -80px;
+    animation: moveBlob2 var(--animation-duration-long) ease-in-out infinite alternate-reverse;
+}
+
+@keyframes moveBlob1 {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(50px, -30px) scale(1.05); }
+    66% { transform: translate(-20px, 40px) scale(0.95); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes moveBlob2 {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-40px, 60px) scale(0.9); }
+    66% { transform: translate(30px, -50px) scale(1.1); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
 
 /* ----------------------------------------------------------------------------
    3. Typography Enhancements (تحسينات الطباعة)
 ---------------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
     color: var(--color-secondary-dark);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-md);
-    line-height: 1.2;
+    line-height: 1.25;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05); /* Subtle text shadow */
 }
 
 h1 { font-size: var(--font-size-h1); }
 h2 { font-size: var(--font-size-h2); }
 h3 { font-size: var(--font-size-h3); }
-h4 { font-size: var(--font-size-xl); color: var(--color-secondary-light); }
+h4 { font-size: var(--font-size-xl); color: var(--color-primary-deep); } /* H4 with accent color */
 
 p {
-    margin-bottom: var(--spacing-md);
-    color: var(--color-text-light);
+    margin-bottom: var(--spacing-lg); /* More space for paragraphs */
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-base);
 }
 
 a {
-    color: var(--color-primary-end);
+    color: var(--color-primary-light);
     text-decoration: none;
-    transition: color var(--transition-duration-fast) var(--transition-easing-ease);
+    transition: all var(--transition-fast);
     font-weight: var(--font-weight-medium);
+    position: relative;
 }
 
 a:hover {
-    color: var(--color-primary-start);
+    color: var(--color-primary-deep);
+    text-shadow: 0 0 5px rgba(138, 43, 226, 0.3);
 }
 
 /* ----------------------------------------------------------------------------
-   4. Buttons - الأزرار (عصرية مع تأثيرات تفاعلية)
+   4. Buttons - الأزرار (تصميم ثلاثي الأبعاد مع تأثيرات متقدمة)
 ---------------------------------------------------------------------------- */
 .btn {
     padding: var(--spacing-sm) var(--spacing-lg);
@@ -145,134 +196,132 @@ a:hover {
     cursor: pointer;
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-bold);
-    transition: background var(--transition-duration-normal) var(--transition-easing-ease),
-                box-shadow var(--transition-duration-normal) var(--transition-easing-ease),
-                transform 0.1s var(--transition-easing-ease);
+    transition: all var(--transition-fast);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: var(--spacing-xs);
     white-space: nowrap;
-    position: relative; /* For ripple effect */
-    overflow: hidden; /* For ripple effect */
-    letter-spacing: 0.5px; /* Subtle spacing */
-    box-shadow: var(--shadow-light); /* Initial soft shadow */
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.7px;
+    box-shadow: var(--shadow-button-primary); /* Default shadow */
+    will-change: transform, box-shadow, background; /* Performance hint */
 }
 
 .btn:active {
-    transform: translateY(1px); /* Gentle press effect */
-    box-shadow: var(--shadow-inset); /* Inset shadow for pressed feel */
+    transform: translateY(2px) scale(0.98); /* Deeper press effect */
+    box-shadow: var(--shadow-neomorphic-inner); /* Inset on press */
 }
 
-/* Primary Button - الزر الأساسي بتدرج لوني جذاب */
+/* Primary Button - الزر الأساسي بتدرج ثلاثي الأبعاد */
 .btn.primary-btn {
-    background: linear-gradient(45deg, var(--color-primary-start), var(--color-primary-end));
-    color: var(--color-background-light);
-    box-shadow: 0 8px 20px rgba(37, 117, 252, 0.3); /* Stronger shadow for primary */
+    background: linear-gradient(135deg, var(--color-primary-deep), var(--color-primary-light));
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-button-primary);
 }
 
 .btn.primary-btn:hover {
-    background: linear-gradient(45deg, var(--color-primary-end), var(--color-primary-start)); /* Invert gradient on hover */
-    box-shadow: 0 10px 25px rgba(37, 117, 252, 0.4);
-    transform: translateY(-2px); /* Slight lift on hover */
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-deep)); /* Invert on hover */
+    transform: translateY(-3px); /* Stronger lift on hover */
+    box-shadow: 0 15px 35px rgba(138, 43, 226, 0.5); /* Enhanced hover shadow */
 }
 
-/* Secondary Button - زر ثانوي بتصميم نظيف */
+/* Secondary Button - زر ثانوي بتصميم أنيق */
 .btn.secondary-btn {
-    background-color: var(--color-background-light);
-    color: var(--color-secondary-light);
-    border: 1px solid var(--color-border-soft);
-    box-shadow: var(--shadow-light);
+    background-color: var(--color-background-start);
+    color: var(--color-text-main);
+    border: 1px solid var(--color-glass-border); /* Subtle glass border */
+    box-shadow: var(--shadow-neomorphic-outer); /* Neomorphic outer shadow */
 }
 
 .btn.secondary-btn:hover {
-    background-color: var(--color-background-medium);
-    border-color: color-mix(in srgb, var(--color-primary-end) 30%, var(--color-border-soft));
-    box-shadow: var(--shadow-medium);
+    background-color: var(--color-background-end);
+    color: var(--color-primary-deep);
     transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More standard shadow on hover */
 }
 
 /* Danger Button - زر الحذف/الخطر */
 .btn.danger-btn {
-    background-color: var(--color-accent-error);
-    color: var(--color-background-light);
-    box-shadow: 0 4px 15px rgba(255, 77, 79, 0.2);
+    background-color: var(--color-error);
+    color: white;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
 }
 
 .btn.danger-btn:hover {
-    background-color: color-mix(in srgb, var(--color-accent-error) 85%, black);
-    box-shadow: 0 6px 20px rgba(255, 77, 79, 0.3);
+    background-color: color-mix(in srgb, var(--color-error) 80%, black);
     transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 107, 107, 0.6);
 }
 
-/* Icon Button - زر الأيقونة */
+/* Icon Button - زر الأيقونة بتصميم ثلاثي الأبعاد خفيف */
 .btn.icon-btn {
     padding: var(--spacing-xs);
-    width: 44px; /* Larger touch target */
-    height: 44px;
-    background-color: var(--color-background-light);
-    border: 1px solid var(--color-border-soft);
-    color: var(--color-secondary-light);
-    border-radius: var(--border-radius-circle); /* Perfectly round */
-    font-size: var(--font-size-xl); /* Larger emoji icons */
-    box-shadow: var(--shadow-light);
+    width: 50px; /* Larger touch target */
+    height: 50px;
+    background-color: var(--color-background-start);
+    border: 1px solid var(--color-glass-border);
+    color: var(--color-primary-light);
+    border-radius: var(--border-radius-circle);
+    font-size: 1.8em; /* Larger emoji icons */
+    box-shadow: var(--shadow-neomorphic-outer);
 }
 
 .btn.icon-btn:hover {
-    background-color: var(--color-background-medium);
-    color: var(--color-primary-end);
-    box-shadow: var(--shadow-medium);
-    transform: translateY(-2px);
+    background-color: var(--color-background-end);
+    color: var(--color-primary-deep);
+    transform: translateY(-2px) rotate(5deg); /* Subtle rotate on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn:disabled {
-    opacity: 0.5;
+    opacity: 0.4;
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
+    filter: grayscale(0.5); /* Desaturate disabled buttons */
 }
 
-/* Ripple Effect - تأثير التموج عند النقر */
+/* Ripple Effect (Enhanced) - تأثير التموج ثلاثي الأبعاد */
 .btn::after {
     content: '';
     position: absolute;
     border-radius: var(--border-radius-circle);
-    background-color: rgba(255, 255, 255, 0.5); /* White ripple for primary/danger */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%); /* Gradient ripple */
     width: 0;
     height: 0;
-    transform: translate(-50%, -50%);
-    transition: width var(--animation-ripple-speed) ease-out,
-                height var(--animation-ripple-speed) ease-out,
-                opacity var(--animation-ripple-speed) ease-out;
+    transform: translate(-50%, -50%) scale(0);
+    transition: width var(--transition-bounce), height var(--transition-bounce), transform var(--transition-bounce), opacity var(--transition-bounce);
     opacity: 0;
-    pointer-events: none; /* Ensure ripple doesn't block clicks */
-}
-.btn.secondary-btn::after, .btn.icon-btn::after {
-    background-color: rgba(0, 0, 0, 0.1); /* Darker ripple for light buttons */
+    pointer-events: none;
 }
 
-/* JavaScript will add a class like 'ripple-active' on click */
 .btn.ripple-active::after {
-    width: 200%; /* Large enough to cover button */
-    height: 200%;
+    width: 250%;
+    height: 250%;
     opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: none; /* No transition for this state */
 }
+
 
 /* ----------------------------------------------------------------------------
-   5. Forms & Inputs (النماذج وحقول الإدخال) - تصميم أنيق وعصري
+   5. Forms & Inputs (النماذج وحقول الإدخال) - تصميم زجاجي ومضيء
 ---------------------------------------------------------------------------- */
 .form-group {
     margin-bottom: var(--spacing-lg);
-    position: relative; /* For validation messages */
+    position: relative;
 }
 
 .form-group label {
     display: block;
     margin-bottom: var(--spacing-sm);
     font-weight: var(--font-weight-medium);
-    color: var(--color-secondary-light);
+    color: var(--color-text-main);
     font-size: var(--font-size-sm);
-    transition: color var(--transition-duration-fast);
+    transition: color var(--transition-fast);
 }
 
 .form-group input[type="text"],
@@ -285,17 +334,17 @@ a:hover {
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: var(--spacing-md) var(--spacing-lg); /* More padding */
-    border: 1px solid var(--color-border-soft);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: 1px solid var(--color-glass-border);
     border-radius: var(--border-radius-md);
     font-size: var(--font-size-base);
-    color: var(--color-text-dark);
-    background-color: var(--color-background-light);
-    box-shadow: var(--shadow-light); /* Soft initial shadow */
-    transition: border-color var(--transition-duration-fast),
-                box-shadow var(--transition-duration-fast),
-                background-color var(--transition-duration-fast);
-    appearance: none; /* Reset default browser styles for consistency */
+    color: var(--color-text-main);
+    background-color: var(--color-glass-base); /* Glass background */
+    backdrop-filter: blur(10px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-glass); /* Glass shadow */
+    transition: all var(--transition-fast);
+    appearance: none;
 }
 
 .form-group input[type="text"]:focus,
@@ -307,278 +356,311 @@ a:hover {
 .form-group input[type="time"]:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    border-color: var(--color-primary-end);
+    border-color: var(--color-primary-light);
     outline: none;
-    box-shadow: 0 0 0 4px rgba(37, 117, 252, 0.2); /* Vibrant focus shadow */
-    background-color: white; /* Brighter background on focus */
+    background-color: rgba(255, 255, 255, 0.25); /* More opaque glass on focus */
+    box-shadow: 0 0 0 5px rgba(138, 43, 226, 0.2); /* Glow effect on focus */
 }
 
 .form-group input.error,
 .form-group textarea.error {
-    border-color: var(--color-accent-error);
-    box-shadow: 0 0 0 3px rgba(255, 77, 79, 0.2);
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.2);
 }
 
 .form-group .error-message {
-    color: var(--color-accent-error);
+    color: var(--color-error);
     font-size: var(--font-size-sm);
     margin-top: var(--spacing-xs);
     display: block;
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-medium);
 }
 
-.form-group textarea {
-    min-height: 100px;
-    resize: vertical;
-}
-
-/* Select Box custom arrow */
+/* Select Box with custom arrow for RTL */
 .form-group select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236E7B91'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235F6B8A'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: left 12px center; /* Position arrow on the left for RTL */
-    padding-left: var(--spacing-xxl); /* Make space for the arrow */
+    background-position: left 15px center; /* Position arrow on the left for RTL */
+    padding-left: var(--spacing-xxl);
     padding-right: var(--spacing-md);
-    direction: rtl; /* Ensure text flows correctly with RTL */
-    text-align: right; /* Align text to the right */
-}
-.form-group select option {
     direction: rtl;
     text-align: right;
 }
 
-/* Range Slider - تصميم عصري لمقبض التمرير */
+/* Range Slider - تصميم زجاجي ديناميكي */
 .form-group input[type="range"] {
-    height: 10px; /* Thicker track */
-    background: linear-gradient(to right, var(--color-primary-end) 0%, var(--color-primary-end) var(--value, 50%), var(--color-border-soft) var(--value, 50%), var(--color-border-soft) 100%);
+    height: 12px; /* Thicker track */
+    background: var(--color-glass-base); /* Glass base track */
     border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-inset); /* Inset shadow for track */
+    box-shadow: var(--shadow-inset);
+    overflow: hidden; /* For inner fill */
+    position: relative;
+}
+/* Fill effect for range input */
+.form-group input[type="range"]::before {
+    content: '';
+    height: 100%;
+    width: var(--value, 0%); /* Dynamic width from JS */
+    background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary-deep));
+    position: absolute;
+    top: 0;
+    right: 0; /* Fill from right for RTL */
+    border-radius: var(--border-radius-md);
+    transition: width var(--transition-fast);
 }
 .form-group input[type="range"]::-webkit-slider-thumb {
-    width: 24px; /* Larger thumb */
-    height: 24px;
+    -webkit-appearance: none;
+    width: 28px; /* Larger, more prominent thumb */
+    height: 28px;
     border-radius: var(--border-radius-circle);
-    background: linear-gradient(45deg, var(--color-primary-start), var(--color-primary-end));
-    box-shadow: 0 2px 8px rgba(37, 117, 252, 0.3); /* Subtle thumb shadow */
-    border: 3px solid var(--color-background-light); /* White ring */
+    background: linear-gradient(45deg, var(--color-primary-deep), var(--color-primary-light));
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
+    border: 4px solid var(--color-background-start); /* Light ring */
     cursor: grab;
-    transition: background var(--transition-duration-fast), box-shadow var(--transition-duration-fast), transform var(--transition-duration-fast);
+    transition: all var(--transition-fast);
+    z-index: 2; /* Bring thumb to front */
+    position: relative;
 }
 .form-group input[type="range"]::-webkit-slider-thumb:active {
     cursor: grabbing;
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(37, 117, 252, 0.5);
+    transform: scale(1.15);
+    box-shadow: 0 6px 18px rgba(138, 43, 226, 0.6);
 }
-.form-group input[type="range"]::-moz-range-thumb { /* Firefox */
-    width: 24px;
-    height: 24px;
+/* For Firefox */
+.form-group input[type="range"]::-moz-range-track {
+    background: var(--color-glass-base);
+    border-radius: var(--border-radius-md);
+    height: 12px;
+}
+.form-group input[type="range"]::-moz-range-thumb {
+    border: none;
+    width: 28px;
+    height: 28px;
     border-radius: var(--border-radius-circle);
-    background: linear-gradient(45deg, var(--color-primary-start), var(--color-primary-end));
-    box-shadow: 0 2px 8px rgba(37, 117, 252, 0.3);
-    border: 3px solid var(--color-background-light);
+    background: linear-gradient(45deg, var(--color-primary-deep), var(--color-primary-light));
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
+    border: 4px solid var(--color-background-start);
     cursor: grab;
-    transition: background var(--transition-duration-fast), box-shadow var(--transition-duration-fast), transform var(--transition-duration-fast);
+    transition: all var(--transition-fast);
 }
 .form-group input[type="range"]::-moz-range-thumb:active {
     cursor: grabbing;
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(37, 117, 252, 0.5);
+    transform: scale(1.15);
+    box-shadow: 0 6px 18px rgba(138, 43, 226, 0.6);
 }
 
-.form-group input[type="range"] + span { /* Value display for range input */
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    margin-top: var(--spacing-xs);
-    text-align: right; /* RTL support */
-}
 
-/* Color Picker - مربع لون أنيق */
+/* Color Picker - مربع لون متوهج */
 .form-group input[type="color"] {
-    width: 50px; /* Slightly larger */
-    height: 50px;
-    border: 2px solid var(--color-border-soft);
+    width: 60px; /* Larger */
+    height: 60px;
+    border: 3px solid var(--color-glass-border);
     border-radius: var(--border-radius-sm);
-    box-shadow: var(--shadow-light);
-    transition: border-color var(--transition-duration-fast), box-shadow var(--transition-duration-fast);
+    box-shadow: var(--shadow-glass);
 }
 .form-group input[type="color"]:focus {
-    border-color: var(--color-primary-end);
-    box-shadow: 0 0 0 4px rgba(37, 117, 252, 0.2);
+    border-color: var(--color-primary-light);
+    box-shadow: 0 0 0 5px rgba(138, 43, 226, 0.2);
 }
 
-/* Switch Toggle - مفتاح تبديل أنيق */
+/* Switch Toggle - مفتاح تبديل زجاجي متوهج */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 56px; /* Wider switch */
-    height: 30px; /* Taller switch */
-}
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+    width: 64px; /* Wider switch */
+    height: 36px; /* Taller switch */
 }
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--color-border-soft);
-    transition: var(--transition-duration-normal) ease;
-    border-radius: var(--border-radius-lg); /* Pill shape */
-    box-shadow: var(--shadow-inset);
+    background-color: var(--color-glass-base);
+    box-shadow: var(--shadow-neomorphic-inner);
+    border: 1px solid var(--color-glass-border);
 }
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 22px; /* Thumb size */
-    width: 22px;
-    right: 4px; /* Position to right for RTL */
-    bottom: 4px;
-    background-color: white;
-    transition: var(--transition-duration-normal) ease;
-    border-radius: var(--border-radius-circle);
-    box-shadow: var(--shadow-light); /* Thumb shadow */
+    height: 28px; /* Thumb size */
+    width: 28px;
+    right: 3px; /* Position for RTL */
+    bottom: 3px;
+    background-color: var(--color-background-start); /* Light background for thumb */
+    box-shadow: var(--shadow-button-secondary); /* Outer shadow for thumb */
 }
 input:checked + .slider {
-    background: linear-gradient(45deg, var(--color-primary-start), var(--color-primary-end)); /* Gradient when checked */
+    background: linear-gradient(45deg, var(--color-primary-deep), var(--color-primary-light));
+    box-shadow: var(--shadow-button-primary); /* Shadow when checked */
 }
 input:checked + .slider:before {
-    transform: translateX(-26px); /* Move to left for RTL */
+    transform: translateX(-28px); /* Move to left for RTL */
+    background-color: white; /* Brighter thumb when checked */
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.4); /* Glow for thumb */
+}
+
+/* File Input - تصميم أنيق لرفع الملفات */
+.form-group input[type="file"] {
+    border: 2px dashed var(--color-glass-border); /* Dashed border for file input */
+    background-color: var(--color-glass-base);
+    text-align: center;
+    padding: var(--spacing-lg);
+    cursor: pointer;
+    color: var(--color-text-secondary);
+}
+.form-group input[type="file"]::file-selector-button {
+    display: none; /* Hide default button */
+}
+.form-group input[type="file"]::before {
+    content: "اختر ملفاً أو اسحبه هنا ⬆️"; /* Custom text */
+    display: block;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary-light);
+}
+.form-group input[type="file"]:hover {
+    border-color: var(--color-primary-light);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ----------------------------------------------------------------------------
-   6. Layout & Page Structure (التخطيط وهيكل الصفحة)
+   6. Layout & Page Structure (التخطيط وهيكل الصفحة) - تصميم تطبيق جوال متقدم
 ---------------------------------------------------------------------------- */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
 .app-content {
-    flex: 1; /* Allows content to expand */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    max-width: 900px; /* Optimized width for mobile-like apps */
+    max-width: 980px; /* Wider for more content space */
     width: 100%;
     margin: 0 auto;
-    padding: 0 var(--spacing-lg); /* Padding on sides */
+    padding: var(--spacing-lg) var(--spacing-md);
+    position: relative; /* For page transitions */
 }
 
 .app-page {
-    background-color: var(--color-background-light);
-    border-radius: var(--border-radius-lg); /* Rounded corners for the "app screen" */
-    box-shadow: var(--shadow-deep); /* Stronger shadow for the main app container */
-    padding: var(--spacing-xxl); /* Generous padding inside pages */
-    min-height: calc(100vh - 100px); /* Adjust based on header/footer */
+    background: var(--color-glass-base); /* Glassmorphism background */
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-glass);
+    padding: var(--spacing-xxl);
+    min-height: calc(100vh - 180px); /* Adjust based on header/footer for mobile-like view */
     width: 100%;
-    transform: translateX(0); /* Default position */
-    transition: transform var(--animation-page-slide-speed) cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Page transition with bounce */
-    position: absolute; /* Stack pages for transitions */
-    top: 0;
-    right: 0; /* RTL alignment */
-    bottom: 0;
+    transform: translateX(0);
+    transition: transform var(--animation-duration-medium) var(--transition-bounce), opacity var(--animation-duration-medium) ease-out;
+    position: absolute;
+    top: var(--spacing-xl); /* Offset from top for glass effect */
+    right: 0;
     left: 0;
-    margin: var(--spacing-xl) auto; /* Center the app view */
-    overflow-y: auto; /* Allow scrolling within the page */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    margin: 0 auto; /* Center the page within app-content */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    will-change: transform, opacity;
 }
 
 .app-page.hidden {
-    display: none !important; /* Hide physically for non-active pages */
+    display: none !important;
 }
 
-/* Page Transition Animations - محاكاة انتقال شاشات التطبيق */
+/* Page Transition Animations - محاكاة انتقال شاشات التطبيق المتطورة */
 .app-page.slide-enter-active,
 .app-page.slide-exit-active {
-    transition: transform var(--animation-page-slide-speed) var(--transition-easing-bounce);
+    transition: transform var(--animation-duration-medium) var(--transition-bounce),
+                opacity var(--animation-duration-medium) ease-out;
+    position: absolute; /* Essential for smooth transitions */
+    top: var(--spacing-xl);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
 }
 
 .app-page.slide-enter-from-right {
-    transform: translateX(100%);
+    transform: translateX(100%) scale(0.95);
     opacity: 0;
 }
 .app-page.slide-exit-to-left {
-    transform: translateX(-100%);
+    transform: translateX(-100%) scale(0.95);
     opacity: 0;
 }
 .app-page.slide-enter-from-left {
-    transform: translateX(-100%);
+    transform: translateX(-100%) scale(0.95);
     opacity: 0;
 }
 .app-page.slide-exit-to-right {
-    transform: translateX(100%);
+    transform: translateX(100%) scale(0.95);
     opacity: 0;
 }
 .app-page.slide-current {
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
     opacity: 1;
 }
 
 /* ----------------------------------------------------------------------------
-   7. Header & Navigation (الرأس والتنقل) - تصميم جذاب ومدمج
+   7. Header & Navigation (الرأس والتنقل) - تصميم عائم وجذاب
 ---------------------------------------------------------------------------- */
 .app-header {
-    background: linear-gradient(90deg, var(--color-secondary-dark), var(--color-secondary-light)); /* Darker gradient for header */
-    color: var(--color-background-light);
+    background: linear-gradient(90deg, var(--color-secondary-dark), var(--color-secondary-light));
+    color: white;
     padding: var(--spacing-md) var(--spacing-lg);
     display: flex;
-    flex-direction: column; /* Stack on mobile */
-    justify-content: center; /* Center header content */
+    flex-direction: column;
     align-items: center;
-    box-shadow: var(--shadow-deep);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom-left-radius: var(--border-radius-lg);
     border-bottom-right-radius: var(--border-radius-lg);
-    margin-bottom: var(--spacing-xl); /* Space below header */
+    margin-bottom: var(--spacing-xxl); /* More space below header */
+    transform: translateY(0);
+    transition: transform var(--transition-normal);
+}
+
+.app-header.scrolled {
+    transform: translateY(-100%); /* Hide header on scroll */
+    box-shadow: none;
 }
 
 .app-header h2 {
-    color: var(--color-background-light);
-    margin-bottom: var(--spacing-md); /* Space between title and nav */
+    color: white;
+    margin-bottom: var(--spacing-md);
     font-size: var(--font-size-h3);
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .main-nav {
     display: flex;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
     justify-content: center;
 }
 
 .main-nav .nav-btn {
-    background: rgba(255, 255, 255, 0.1); /* Subtle transparent background */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--color-background-light);
+    background: var(--color-glass-base); /* Glass button in nav */
+    border: 1px solid var(--color-glass-border);
+    color: white;
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--border-radius-md);
     font-size: var(--font-size-sm);
-    transition: background-color var(--transition-duration-fast), transform 0.1s;
-    box-shadow: var(--shadow-light);
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-glass);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .main-nav .nav-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .main-nav .nav-btn.active {
-    background: linear-gradient(45deg, var(--color-primary-start), var(--color-primary-end));
+    background: linear-gradient(45deg, var(--color-primary-light), var(--color-primary-deep));
     color: white;
     font-weight: var(--font-weight-bold);
-    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
-    transform: translateY(-1px); /* Slight elevation */
+    box-shadow: 0 5px 20px rgba(138, 43, 226, 0.4);
+    transform: translateY(-3px) scale(1.05); /* More pronounced active state */
+    border-color: rgba(255, 255, 255, 0.5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* ----------------------------------------------------------------------------
-   8. Home Page (الشاشة الرئيسية) - تصميم جذاب ومحفز
+   8. Home Page (الشاشة الرئيسية) - تصميم آسر مع عناصر عائمة
 ---------------------------------------------------------------------------- */
 #home-page {
     text-align: center;
@@ -587,47 +669,48 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%; /* Take full height of app-page */
 }
 
 #home-page h1 {
     margin-bottom: var(--spacing-md);
-    color: var(--color-primary-start);
+    color: var(--color-primary-deep);
     font-size: var(--font-size-h1);
-    letter-spacing: 1.5px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-primary);
 }
 
 #home-page p {
     font-size: var(--font-size-lg);
-    color: var(--color-text-light);
-    max-width: 600px;
+    color: var(--color-text-secondary);
+    max-width: 700px;
     margin: 0 auto var(--spacing-xxl);
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
 .quick-actions {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-xl);
     flex-wrap: wrap;
     margin-top: var(--spacing-lg);
 }
 
 /* ----------------------------------------------------------------------------
-   9. QR Creation Wizard (معالج إنشاء رمز QR) - تصميم منظم وسهل الاستخدام
+   9. QR Creation Wizard (معالج إنشاء رمز QR) - تصميم منظم مع بطاقات زجاجية
 ---------------------------------------------------------------------------- */
-.qr-creation-wizard {
-    /* Padding is handled by .app-page */
-}
-
 .qr-creation-step {
-    background-color: var(--color-background-medium); /* Slightly darker background for steps */
+    background: var(--color-glass-base);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--color-glass-border);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-xl);
     margin-top: var(--spacing-xl);
-    box-shadow: var(--shadow-medium);
+    box-shadow: var(--shadow-glass);
     position: relative;
-    overflow: hidden; /* For any internal overflow */
+    overflow: hidden;
 }
 
 .qr-creation-step h3 {
@@ -635,215 +718,138 @@ body {
     margin-bottom: var(--spacing-xxl);
     color: var(--color-secondary-dark);
     position: relative;
+    font-family: var(--font-primary);
 }
-.qr-creation-step h3::after { /* Underline effect */
+.qr-creation-step h3::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--color-primary-start), var(--color-primary-end));
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary-deep));
     border-radius: 5px;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
 }
-
 
 .qr-type-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Adaptable grid */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Larger cards */
     gap: var(--spacing-md);
     padding: var(--spacing-md) 0;
 }
 
 .qr-type-card {
-    background-color: var(--color-background-light);
-    border: 1px solid var(--color-border-soft);
+    background: rgba(255, 255, 255, 0.1); /* Lighter glass for cards */
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--border-radius-md);
     padding: var(--spacing-lg);
     text-align: center;
     cursor: pointer;
-    transition: transform var(--transition-duration-fast) var(--transition-easing-ease),
-                box-shadow var(--transition-duration-fast) var(--transition-easing-ease),
-                background-color var(--transition-duration-fast);
+    transition: all var(--transition-fast);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 140px;
-    box-shadow: var(--shadow-light);
+    min-height: 160px;
+    box-shadow: var(--shadow-glass);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .qr-type-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-medium);
-    background-color: color-mix(in srgb, var(--color-primary-end) 5%, var(--color-background-light));
+    transform: translateY(-8px) scale(1.02); /* More prominent lift */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .qr-type-card.selected {
-    border-color: var(--color-primary-end);
-    box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.3); /* Ring on selection */
-    transform: scale(1.03);
-    background: linear-gradient(135deg, color-mix(in srgb, var(--color-primary-start) 10%, transparent), color-mix(in srgb, var(--color-primary-end) 10%, transparent));
+    border-color: var(--color-primary-light);
+    box-shadow: 0 0 0 5px rgba(138, 43, 226, 0.3), var(--shadow-glass); /* Stronger glow on selection */
+    transform: scale(1.05); /* Larger on selection */
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(75, 0, 130, 0.2));
 }
 
 .qr-type-card .icon {
-    font-size: 3.5em; /* Larger, more expressive icons */
+    font-size: 4em; /* Even larger, more impactful icons */
     margin-bottom: var(--spacing-sm);
-    color: var(--color-primary-end); /* Primary color for icons */
-    line-height: 1; /* Remove extra space */
+    color: var(--color-primary-light);
+    line-height: 1;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.3); /* Subtle glow for icons */
 }
 
 .qr-type-card .name {
     font-weight: var(--font-weight-bold);
     color: var(--color-secondary-dark);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
 }
 
-#next-to-content-btn, #next-to-design-btn, #save-qr-btn {
-    width: 100%;
-    margin-top: var(--spacing-xl);
-}
-
-/* Content Editor Specifics */
-#content-editor-title span {
-    color: var(--color-primary-end);
-    font-weight: var(--font-weight-bold);
-}
-
-.dynamic-qr-options {
-    margin-top: var(--spacing-xxl);
+/* Dynamic QR Options & Design Editor similar glass design */
+.dynamic-qr-options, .design-layout {
+    background: var(--color-glass-base);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-glass);
     padding: var(--spacing-xl);
-    border: 2px dashed var(--color-primary-end);
-    border-radius: var(--border-radius-md);
-    background-color: color-mix(in srgb, var(--color-primary-end) 5%, transparent);
-    box-shadow: var(--shadow-light);
+    margin-top: var(--spacing-xxl);
 }
 
 .dynamic-qr-options h4 {
-    color: var(--color-primary-start);
-    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary-light);
     text-align: center;
+    margin-bottom: var(--spacing-lg);
 }
 
 .dynamic-rule-card {
-    background-color: var(--color-background-light);
-    border: 1px solid var(--color-border-soft);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--border-radius-md);
     padding: var(--spacing-md);
     margin-top: var(--spacing-md);
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    align-items: center;
-    box-shadow: var(--shadow-light);
+    box-shadow: var(--shadow-glass);
+    transition: all var(--transition-fast);
 }
-.dynamic-rule-card select,
-.dynamic-rule-card input {
-    flex: 1; /* Allow inputs to take available space */
-    min-width: 150px; /* Minimum width for readability */
-}
-.dynamic-rule-card .condition-details {
-    flex-basis: 100%; /* Take full width */
-    margin-top: var(--spacing-sm);
-    display: flex;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
-}
-.dynamic-rule-card .delete-rule-btn {
-    margin-left: auto; /* Push to right */
-    padding: var(--spacing-xs);
-    width: 40px; /* Small square */
-    height: 40px;
-    border-radius: var(--border-radius-sm);
-    font-size: var(--font-size-lg);
+.dynamic-rule-card:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Design Editor Specifics */
-.design-layout {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-xxl);
-    margin-top: var(--spacing-lg);
-    justify-content: center; /* Center items in layout */
-    align-items: flex-start;
-}
 
-.design-controls {
-    flex: 2; /* Takes more space */
-    min-width: 300px;
-    max-width: 450px;
-}
-
+/* QR Preview Container - معاينة QR متوهجة */
 .qr-preview-container {
-    flex: 1; /* Takes remaining space */
-    min-width: 300px;
-    max-width: 350px;
-    text-align: center;
-    background-color: var(--color-background-light);
-    padding: var(--spacing-xl);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--border-radius-lg);
-    border: 1px solid var(--color-border-soft);
-    box-shadow: var(--shadow-medium);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.qr-preview-container h4 {
-    margin-bottom: var(--spacing-md);
-    color: var(--color-secondary-dark);
+    box-shadow: var(--shadow-glass), 0 0 20px rgba(138, 43, 226, 0.2); /* Enhanced glow */
 }
 
 #qr-code-preview {
-    width: 280px; /* Larger fixed size for QR code preview */
-    height: 280px;
-    border: 2px dashed var(--color-primary-start); /* Dashed border for preview */
+    width: 300px; /* Larger, more dominant QR preview */
+    height: 300px;
+    border: 3px dashed var(--color-primary-light); /* More prominent dashed border */
     border-radius: var(--border-radius-md);
-    margin-bottom: var(--spacing-md);
-    background-color: white; /* Pure white background for QR */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--shadow-light);
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M9 10L6 7l3-3V0l-3 3-3-3H0l3 3-3 3h3l3 3v-3z'/%3E%3C/g%3E%3C/svg%3E"); /* Subtle pattern */
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%236A5ACD' fill-opacity='0.15' fill-rule='evenodd'%3E%3Cpath d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/%3E%3C/g%3E%3C/svg%3E"); /* More visible subtle pattern */
 }
 
 #qr-code-preview img {
-    max-width: 30%; /* Max size for logo inside QR */
-    max-height: 30%;
-    object-fit: contain;
-    position: absolute;
-    z-index: 2;
-    background-color: white; /* Ensure logo background is white for contrast */
-    border: 2px solid white; /* White border around logo */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow for logo */
-}
-#qr-code-preview img.round {
-    border-radius: var(--border-radius-circle);
-}
-
-.qr-preview-info {
-    margin-top: var(--spacing-sm);
-    max-width: 280px;
-    word-wrap: break-word;
-    font-size: var(--font-size-sm);
-    color: var(--color-text-light);
-    line-height: 1.4;
-}
-.qr-preview-info h4 {
-    margin-bottom: var(--spacing-xs);
-    font-size: var(--font-size-base);
-    color: var(--color-secondary-light);
+    max-width: 35%; /* Slightly larger logo */
+    max-height: 35%;
+    border: 3px solid white; /* Thicker white border */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 /* ----------------------------------------------------------------------------
-   10. Scanner Module (وحدة المسح) - تصميم وظيفي وجذاب
+   10. Scanner Module (وحدة المسح) - تصميم سينمائي غامر
 ---------------------------------------------------------------------------- */
-#scan-page {
+#scan-qr-page {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -853,215 +859,174 @@ body {
 
 #reader {
     width: 100%;
-    max-width: 600px;
-    height: 400px; /* Generous height for camera view */
-    background-color: var(--color-secondary-dark); /* Dark background for camera */
+    max-width: 650px; /* Wider scanner view */
+    height: 450px; /* Taller scanner view */
+    background-color: var(--color-secondary-dark); /* Dark background for cinematic feel */
     margin: var(--spacing-xxl) auto var(--spacing-lg);
     border-radius: var(--border-radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow-deep);
-    position: relative; /* For scanner animations/overlays */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* Deeper shadow for scanner */
+    position: relative;
+    border: 2px solid var(--color-secondary-light); /* Subtle border */
 }
 
-/* Scanner viewfinder styling (for html5-qrcode library, adjust as needed) */
+/* Scanner viewfinder styling (for html5-qrcode library) */
 .html5-qrcode-box-focus-area {
-    border: 3px solid var(--color-accent-success) !important; /* Vibrant green focus */
-    border-radius: var(--border-radius-sm);
-    box-shadow: 0 0 0 5px rgba(56, 199, 109, 0.3); /* Green glow */
-}
-
-.scan-controls {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
+    border: 4px solid var(--color-success) !important; /* Vibrant green for focus */
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 0 0 8px rgba(61, 204, 145, 0.3), 0 0 20px rgba(61, 204, 145, 0.5); /* Stronger glow for focus */
 }
 
 .scan-result {
-    margin-top: var(--spacing-xxl);
-    padding: var(--spacing-lg);
-    background-color: var(--color-background-medium);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-medium);
-    text-align: center;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.scan-result h3 {
-    color: var(--color-secondary-dark);
-    margin-bottom: var(--spacing-md);
+    background: var(--color-glass-base);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--color-glass-border);
+    box-shadow: var(--shadow-glass);
 }
 .scan-result p {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-dark);
-    word-break: break-all; /* Ensure long URLs wrap */
-    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-xl); /* Larger result text */
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary-deep);
 }
 
 /* ----------------------------------------------------------------------------
-   11. History & My QRs (التاريخ ورموزي) - تصميم قوائم واضح ومنظم
+   11. History & My QRs (التاريخ ورموزي) - تصميم قوائم ديناميكي وذكي
 ---------------------------------------------------------------------------- */
 .tabs {
-    display: flex;
-    background-color: var(--color-background-medium);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-glass);
+    overflow: hidden;
     margin-bottom: var(--spacing-xl);
-    box-shadow: var(--shadow-light);
-    overflow: hidden; /* For rounded corners */
 }
 
 .tabs .tab-button {
-    flex: 1; /* Distribute space evenly */
-    background: none;
-    border: none;
-    padding: var(--spacing-md) var(--spacing-lg);
-    cursor: pointer;
+    color: var(--color-text-main);
     font-size: var(--font-size-lg);
-    color: var(--color-text-light);
     font-weight: var(--font-weight-medium);
-    transition: all var(--transition-duration-fast) var(--transition-easing-ease);
-    border-bottom: 3px solid transparent; /* Animated border */
+    border-bottom: 4px solid transparent; /* Thicker active border */
     position: relative;
-    z-index: 1; /* Above any pseudo-elements */
+    z-index: 1;
+    background: none; /* No background on inactive */
 }
 
 .tabs .tab-button:hover {
-    color: var(--color-primary-end);
-    background-color: var(--color-background-light);
+    color: var(--color-primary-light);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .tabs .tab-button.active {
-    color: var(--color-primary-end);
+    color: var(--color-primary-deep);
     font-weight: var(--font-weight-bold);
-    background-color: var(--color-background-light);
-    box-shadow: var(--shadow-inset); /* Inner shadow for active tab */
-    border-color: var(--color-primary-end); /* Primary border for active */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    box-shadow: var(--shadow-inset);
+    border-color: var(--color-primary-light);
+    transform: translateY(-2px); /* Slight lift on active */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .tab-content {
-    background-color: var(--color-background-light);
+    background: var(--color-glass-base);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--color-glass-border);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-xl);
-    box-shadow: var(--shadow-medium);
-    margin-top: var(--spacing-lg); /* Space between tabs and content */
-}
-
-.filter-sort-bar {
-    display: flex;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
-    flex-wrap: wrap;
-    background-color: var(--color-background-medium);
-    padding: var(--spacing-sm);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-light);
-}
-
-.filter-sort-bar input,
-.filter-sort-bar select {
-    flex: 1;
-    min-width: 180px;
-    font-size: var(--font-size-sm);
-}
-
-.item-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
+    box-shadow: var(--shadow-glass);
     margin-top: var(--spacing-lg);
 }
 
-.history-item, .my-qr-item {
-    background-color: var(--color-background-light);
-    border: 1px solid var(--color-border-soft);
+.filter-sort-bar {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--border-radius-md);
-    padding: var(--spacing-lg);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: var(--shadow-light);
-    transition: transform var(--transition-duration-fast) var(--transition-easing-ease),
-                box-shadow var(--transition-duration-fast) var(--transition-easing-ease);
+    box-shadow: var(--shadow-glass);
+    padding: var(--spacing-md);
+}
+
+.item-list {
+    gap: var(--spacing-lg); /* More spacing between items */
+}
+
+.history-item, .my-qr-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-xl); /* More padding */
+    box-shadow: var(--shadow-glass);
+    transition: all var(--transition-fast);
 }
 
 .history-item:hover, .my-qr-item:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-medium);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .history-item h4, .my-qr-item h4 {
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-secondary-dark);
     font-size: var(--font-size-lg);
+    color: var(--color-primary-deep);
 }
 
 .history-item .type, .my-qr-item .type {
-    font-size: var(--font-size-sm);
-    color: var(--color-primary-end);
-    font-weight: var(--font-weight-medium);
-    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-base);
+    color: var(--color-primary-light);
 }
 
 .history-item .date, .my-qr-item .date {
     font-size: var(--font-size-sm);
-    color: var(--color-text-light);
+    color: var(--color-text-secondary);
 }
 
-.history-item .actions, .my-qr-item .actions {
-    display: flex;
-    gap: var(--spacing-sm);
-}
-
-/* Favorite button active state */
 .favorite-btn.active {
-    color: var(--color-accent-warning); /* Gold star */
-    background-color: color-mix(in srgb, var(--color-accent-warning) 20%, transparent);
-    border-color: color-mix(in srgb, var(--color-accent-warning) 50%, transparent);
-    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
-}
-.favorite-btn.active:hover {
-    background-color: color-mix(in srgb, var(--color-accent-warning) 30%, transparent);
+    color: var(--color-warning);
+    background-color: rgba(255, 209, 102, 0.2);
+    border-color: rgba(255, 209, 102, 0.5);
+    box-shadow: 0 0 0 4px rgba(255, 209, 102, 0.3);
 }
 
 /* ----------------------------------------------------------------------------
-   12. Settings Page (صفحة الإعدادات) - تصميم مرتب وسهل التعديل
+   12. Settings Page (صفحة الإعدادات) - تصميم سلس ومنسق
 ---------------------------------------------------------------------------- */
 .settings-group {
-    background-color: var(--color-background-medium);
-    border: 1px solid var(--color-border-soft);
+    background: var(--color-glass-base);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--color-glass-border);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-xl);
     margin-bottom: var(--spacing-xxl);
-    box-shadow: var(--shadow-medium);
+    box-shadow: var(--shadow-glass);
 }
 
 .settings-group h3 {
-    color: var(--color-primary-start);
-    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary-deep);
+    margin-bottom: var(--spacing-xl);
     text-align: center;
     position: relative;
+    font-family: var(--font-primary);
 }
 .settings-group h3::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 40px;
-    height: 2px;
-    background: var(--color-primary-end);
+    width: 60px;
+    height: 3px;
+    background: var(--color-primary-light);
     border-radius: 5px;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
 }
 
-
 .setting-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid var(--color-border-soft);
-    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2); /* Dashed separator for glass look */
+    margin-bottom: var(--spacing-md);
 }
 
 .setting-item:last-child {
@@ -1070,338 +1035,201 @@ body {
 }
 
 .setting-item span {
-    color: var(--color-text-dark);
+    color: var(--color-text-main);
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-medium);
 }
 
-/* Account management specific styles */
 #account-management-section {
-    background-color: color-mix(in srgb, var(--color-accent-error) 5%, transparent);
-    border-color: var(--color-accent-error);
-    margin-top: var(--spacing-xxl);
+    background: rgba(255, 107, 107, 0.1); /* Red tint for danger zone */
+    border-color: rgba(255, 107, 107, 0.3);
+    box-shadow: var(--shadow-glass), 0 0 15px rgba(255, 107, 107, 0.2);
 }
 #account-management-section h3 {
-    color: var(--color-accent-error);
+    color: var(--color-error);
 }
 #account-management-section h3::after {
-    background: var(--color-accent-error);
-}
-#account-management-section p {
-    margin-bottom: var(--spacing-md);
-    color: var(--color-text-dark);
-}
-#current-user-name {
-    font-weight: var(--font-weight-bold);
-    color: var(--color-secondary-dark);
-}
-#logout-btn, #delete-account-btn {
-    margin-top: var(--spacing-md);
-    width: 100%;
-}
-#delete-account-btn {
-    background-color: var(--color-secondary-light); /* Different secondary for delete */
-}
-#delete-account-btn:hover {
-    background-color: var(--color-accent-error);
+    background: var(--color-error);
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
 }
 
 /* ----------------------------------------------------------------------------
-   13. Utility Classes (فئات مساعدة)
+   13. Utility Classes (فئات مساعدة) - تحسينات بسيطة
 ---------------------------------------------------------------------------- */
-.hidden {
-    display: none !important;
-}
-
-.empty-state {
-    text-align: center;
-    color: var(--color-text-light);
-    padding: var(--spacing-xxl);
+.back-btn {
+    color: var(--color-primary-light);
     font-size: var(--font-size-lg);
-    background-color: var(--color-background-medium);
-    border-radius: var(--border-radius-md);
-    margin-top: var(--spacing-lg);
-    box-shadow: var(--shadow-light);
+    font-weight: var(--font-weight-bold);
+    text-shadow: 0 0 5px rgba(138, 43, 226, 0.1);
+    transition: all var(--transition-fast);
+}
+.back-btn:hover {
+    color: var(--color-primary-deep);
+    transform: translateX(5px) scale(1.05); /* More pronounced back animation */
 }
 
 .page-title {
-    text-align: center;
-    margin-bottom: var(--spacing-xl);
     color: var(--color-secondary-dark);
+    font-family: var(--font-primary);
     font-size: var(--font-size-h2);
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.08);
 }
-
-.back-btn {
-    margin-bottom: var(--spacing-lg);
-    background: none;
-    border: none;
-    color: var(--color-secondary-light);
-    font-size: var(--font-size-lg);
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-xs);
-    transition: color var(--transition-duration-fast), transform 0.1s;
-    font-weight: var(--font-weight-medium);
-}
-.back-btn:hover {
-    color: var(--color-primary-end);
-    transform: translateX(3px); /* Slide slightly on hover */
-}
-
-/* Flex utilities */
-.d-flex { display: flex; }
-.justify-content-center { justify-content: center; }
-.align-items-center { align-items: center; }
-.flex-column { flex-direction: column; }
-.gap-md { gap: var(--spacing-md); }
-
-/* Margin/Padding utilities (adjust as needed) */
-.mb-xs { margin-bottom: var(--spacing-xs); }
-.mb-sm { margin-bottom: var(--spacing-sm); }
-.mb-md { margin-bottom: var(--spacing-md); }
-.mb-lg { margin-bottom: var(--spacing-lg); }
-.mb-xl { margin-bottom: var(--spacing-xl); }
-.mt-xs { margin-top: var(--spacing-xs); }
-.mt-sm { margin-top: var(--spacing-sm); }
-.mt-md { margin-top: var(--spacing-md); }
-.mt-lg { margin-top: var(--spacing-lg); }
-.mt-xl { margin-top: var(--spacing-xl); }
 
 /* ----------------------------------------------------------------------------
-   14. Alerts & Spinners (التنبيهات والمؤشرات الدوارة)
+   14. Alerts & Spinners (التنبيهات والمؤشرات الدوارة) - تصميم معزز
 ---------------------------------------------------------------------------- */
 .toast {
-    position: fixed;
-    bottom: var(--spacing-xxl);
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--color-secondary-dark);
-    color: var(--color-background-light);
-    padding: var(--spacing-md) var(--spacing-xl);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-deep);
+    background: linear-gradient(90deg, var(--color-secondary-dark), var(--color-secondary-light));
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateX(-50%) translateY(20px); /* Starts lower */
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.4s var(--transition-easing-ease), transform 0.4s var(--transition-easing-ease);
-    z-index: 2000;
-    white-space: nowrap;
-    font-size: var(--font-size-lg);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
+    transition: all 0.5s var(--transition-bounce); /* Bounce transition for toast */
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--border-radius-md);
 }
 
 .toast.show {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(-10px); /* Slight lift */
+    transform: translateX(-50%) translateY(0); /* Lifts up */
 }
 
-.toast.success { background-color: var(--color-accent-success); }
-.toast.error { background-color: var(--color-accent-error); }
-.toast.info { background-color: var(--color-primary-end); }
+.toast.success { background: linear-gradient(45deg, #28a745, var(--color-success)); }
+.toast.error { background: linear-gradient(45deg, #dc3545, var(--color-error)); }
+.toast.info { background: linear-gradient(45deg, #007bff, var(--color-primary-light)); }
 
-/* Spinner - تصميم دوار جذاب */
+/* Spinner - تصميم دوار متوهج */
 .spinner {
-    border: 5px solid rgba(255, 255, 255, 0.3); /* Lighter border */
-    border-top: 5px solid var(--color-primary-end); /* Vibrant top border */
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    border-top: 6px solid var(--color-primary-light);
     border-radius: var(--border-radius-circle);
-    width: 50px; /* Larger spinner */
-    height: 50px;
-    animation: spin var(--transition-duration-normal) linear infinite;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1500;
-    box-shadow: var(--shadow-medium);
+    width: 60px; /* Larger spinner */
+    height: 60px;
+    animation: spin 1s linear infinite, glowPulse 2s ease-in-out infinite alternate; /* Added glowPulse */
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4); /* Initial glow */
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 15px rgba(138, 43, 226, 0.4); }
+    100% { box-shadow: 0 0 25px rgba(138, 43, 226, 0.7); }
 }
 
 .spinner.small {
-    width: 25px;
-    height: 25px;
-    border-width: 3px;
-    position: static;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: var(--spacing-sm); /* Adjusted for RTL */
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    width: 30px;
+    height: 30px;
+    border-width: 4px;
 }
 
 /* ----------------------------------------------------------------------------
-   15. Responsive Design (التصميم المتجاوب) - لمختلف الأجهزة
+   15. Responsive Design (التصميم المتجاوب) - ضبط دقيق لكل شاشة
 ---------------------------------------------------------------------------- */
 
-/* Small screens (mobile phones) */
-@media (max-width: 768px) {
+/* Mobile Portrait */
+@media (max-width: 600px) {
     :root {
-        --font-size-h1: 2rem;
-        --font-size-h2: 1.8rem;
-        --font-size-h3: 1.3rem;
+        --font-size-base: 16px;
+        --font-size-h1: 2.5rem;
+        --font-size-h2: 2rem;
+        --font-size-h3: 1.5rem;
         --spacing-lg: 20px;
-        --spacing-xl: 24px;
-        --spacing-xxl: 32px;
+        --spacing-xl: 25px;
+        --spacing-xxl: 40px;
     }
+    body::before, body::after {
+        filter: blur(60px); /* Less blur on mobile */
+    }
+    body::before { width: 200px; height: 200px; }
+    body::after { width: 250px; height: 250px; }
 
     .app-header {
-        padding: var(--spacing-md) var(--spacing-sm);
-        border-radius: 0; /* No radius on header for full width mobile */
+        padding: var(--spacing-sm) var(--spacing-xs);
+        border-radius: 0;
         margin-bottom: var(--spacing-lg);
     }
     .app-header h2 {
+        font-size: var(--font-size-h3);
         margin-bottom: var(--spacing-sm);
     }
     .main-nav {
         gap: var(--spacing-xs);
-        width: 100%;
+        flex-wrap: wrap;
     }
     .main-nav .nav-btn {
-        flex-basis: calc(50% - var(--spacing-xs) / 2); /* Two buttons per row */
+        flex-basis: calc(50% - var(--spacing-xs) / 2);
         font-size: var(--font-size-sm);
         padding: var(--spacing-xs) var(--spacing-sm);
     }
+    .main-nav .nav-btn.active {
+        transform: translateY(-2px) scale(1.02);
+    }
 
     .app-content {
-        padding: 0 var(--spacing-sm);
+        padding: var(--spacing-md) var(--spacing-xs);
     }
     .app-page {
         padding: var(--spacing-xl);
-        min-height: calc(100vh - 80px); /* Adjust for smaller header */
-        border-radius: var(--border-radius-md);
-        margin: var(--spacing-md) auto;
+        min-height: calc(100vh - 120px);
+        border-radius: var(--border-radius-lg);
+        top: var(--spacing-lg);
     }
 
-    #home-page .quick-actions {
-        flex-direction: column;
-        gap: var(--spacing-md);
-    }
-    #home-page .quick-actions .btn {
-        width: 90%; /* Wider buttons for mobile */
-        margin: 0 auto;
-    }
+    #home-page h1 { font-size: 2.8rem; }
+    #home-page p { font-size: var(--font-size-base); }
+    .quick-actions { flex-direction: column; gap: var(--spacing-md); }
+    .quick-actions .btn { width: 95%; margin: 0 auto; }
 
-    .qr-creation-step {
-        padding: var(--spacing-lg);
-        margin-top: var(--spacing-lg);
-    }
-    .qr-creation-step h3 {
-        margin-bottom: var(--spacing-xl);
-    }
-
-    .qr-type-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller cards */
-        gap: var(--spacing-sm);
-    }
-    .qr-type-card {
-        min-height: 100px;
-        padding: var(--spacing-sm);
-    }
-    .qr-type-card .icon {
-        font-size: 2.5em;
-    }
-    .qr-type-card .name {
-        font-size: var(--font-size-xxs); /* Smaller text for card name */
-    }
-
-    .design-layout {
-        flex-direction: column;
-        gap: var(--spacing-lg);
-    }
-    .design-controls, .qr-preview-container {
-        min-width: unset;
-        max-width: 100%;
-        width: 100%;
-    }
-    #qr-code-preview {
-        width: 200px; /* Smaller QR preview */
-        height: 200px;
-    }
-
-    #reader {
-        height: 300px; /* Adjust scanner height */
-        margin: var(--spacing-xl) auto var(--spacing-md);
-    }
-
-    .tabs {
-        flex-wrap: wrap; /* Allow tabs to wrap */
-        border-radius: var(--border-radius-md);
-    }
-    .tabs .tab-button {
-        flex-basis: 50%; /* Two tabs per row if needed */
-        font-size: var(--font-size-sm);
-        padding: var(--spacing-sm);
-    }
-
-    .filter-sort-bar {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-        padding: var(--spacing-sm);
-    }
-    .filter-sort-bar input,
-    .filter-sort-bar select {
-        width: 100%;
-    }
-
-    .history-item, .my-qr-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--spacing-md);
-        padding: var(--spacing-md);
-    }
-    .history-item .actions, .my-qr-item .actions {
-        width: 100%;
-        justify-content: space-around;
-        margin-top: var(--spacing-md);
-    }
-
-    .setting-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--spacing-sm);
-    }
-    .setting-item span {
-        width: 100%;
-        margin-bottom: var(--spacing-xs);
-    }
-    .setting-item select {
-        width: 100%;
-    }
-}
-
-/* Medium screens (tablets) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .app-content {
-        padding: 0 var(--spacing-xl);
-        max-width: 800px;
-    }
-    .app-page {
-        padding: var(--spacing-xxl) var(--spacing-xl);
-    }
-    .main-nav {
-        gap: var(--spacing-md);
-    }
-    .main-nav .nav-btn {
-        padding: var(--spacing-sm) var(--spacing-lg);
-    }
+    .qr-creation-step { padding: var(--spacing-lg); margin-top: var(--spacing-lg); }
+    .qr-creation-step h3::after { width: 50px; height: 3px; bottom: -10px; }
     .qr-type-grid {
         grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: var(--spacing-sm);
     }
+    .qr-type-card { min-height: 130px; padding: var(--spacing-sm); }
+    .qr-type-card .icon { font-size: 3em; }
+
+    .design-layout { flex-direction: column; gap: var(--spacing-lg); }
+    #qr-code-preview { width: 220px; height: 220px; }
+
+    #reader { height: 350px; margin: var(--spacing-xl) auto var(--spacing-md); }
+
+    .tabs { flex-wrap: wrap; border-radius: var(--border-radius-md); }
+    .tabs .tab-button { flex-basis: 50%; font-size: var(--font-size-sm); padding: var(--spacing-sm); }
+    .filter-sort-bar { flex-direction: column; gap: var(--spacing-sm); padding: var(--spacing-sm); }
+    .history-item, .my-qr-item { flex-direction: column; align-items: flex-start; gap: var(--spacing-sm); padding: var(--spacing-md); }
+    .history-item .actions, .my-qr-item .actions { width: 100%; justify-content: space-around; margin-top: var(--spacing-md); }
+    .setting-item { flex-direction: column; align-items: flex-start; gap: var(--spacing-sm); }
+    .setting-item span, .setting-item select { width: 100%; }
+
+    .toast {
+        width: 90%;
+        text-align: center;
+        bottom: var(--spacing-lg);
+        font-size: var(--font-size-base);
+    }
+    .spinner { width: 40px; height: 40px; border-width: 4px; }
 }
 
-/* Large screens (desktops) - Ensure responsiveness for wider views */
+/* Tablet Portrait & Landscape */
+@media (min-width: 601px) and (max-width: 1024px) {
+    :root {
+        --font-size-h1: 3rem;
+        --font-size-h2: 2.2rem;
+        --font-size-h3: 1.7rem;
+        --spacing-xl: 30px;
+        --spacing-xxl: 50px;
+    }
+    .app-content { max-width: 850px; }
+    .app-page { padding: var(--spacing-xxl) var(--spacing-xl); }
+    .qr-type-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    #reader { max-width: 700px; height: 500px; }
+}
+
+/* Desktop & Large Screens */
 @media (min-width: 1025px) {
-    .app-content {
-        padding: 0 var(--spacing-xxl);
-        max-width: 960px; /* Slightly wider for large screens */
-    }
-    .app-page {
-        padding: var(--spacing-xxl);
-    }
+    .app-content { max-width: 1100px; /* Slightly wider for immersive feel */ }
+    .app-page { top: var(--spacing-xxl); /* More elevated on large screens */ }
 }
 
