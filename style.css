@@ -1,0 +1,1048 @@
+/* style.css */
+
+/* ----------------------------------------------------------------------------
+   1. Global Resets & Box-Sizing (إعادة تعيينات عالمية وتحديد حجم الصندوق)
+---------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Color Palette */
+    --color-primary: #2F6BFF; /* Primary blue for main actions */
+    --color-secondary: #0E374A; /* Dark blue for headings, borders */
+    --color-background: #FFFFFF; /* Main background */
+    --color-accent: #00C853; /* Success/Accent green */
+    --color-neutral: #F2F4F8; /* Secondary background/light grey */
+    --color-text-dark: #333; /* Default dark text */
+    --color-text-light: #666; /* Lighter text */
+    --color-error: #D32F2F; /* Error red */
+    --color-border: #E0E0E0; /* Light border color */
+
+    /* Typography */
+    --font-family-primary: 'Arial', sans-serif; /* Or your chosen font */
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-lg: 18px;
+    --font-size-h1: 28pt; /* Approx 22-24pt from spec, increased for impact */
+    --font-size-h2: 24pt;
+    --font-size-h3: 20pt;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --line-height-base: 1.6em;
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+
+    /* Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-round: 50%;
+
+    /* Shadow */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+    /* Transitions */
+    --transition-speed: 0.3s;
+    --transition-timing-function: ease-in-out;
+}
+
+html, body {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--color-text-dark);
+    background-color: var(--color-background);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Prevent horizontal scroll for page transitions */
+}
+
+/* ----------------------------------------------------------------------------
+   2. Typography (الطباعة)
+---------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-secondary);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: var(--font-size-lg); }
+
+p {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-light);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--color-secondary);
+}
+
+/* ----------------------------------------------------------------------------
+   3. Buttons (الأزرار)
+---------------------------------------------------------------------------- */
+.btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform 0.1s ease-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    white-space: nowrap;
+}
+
+.btn:active {
+    transform: translateY(1px); /* Simple press effect */
+}
+
+.btn.primary-btn {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+.btn.primary-btn:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 80%, black); /* Darken primary */
+}
+
+.btn.secondary-btn {
+    background-color: var(--color-neutral);
+    color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+}
+
+.btn.secondary-btn:hover {
+    background-color: color-mix(in srgb, var(--color-neutral) 80%, var(--color-primary)); /* Lightly tint with primary */
+}
+
+.btn.danger-btn {
+    background-color: var(--color-error);
+    color: var(--color-background);
+}
+
+.btn.danger-btn:hover {
+    background-color: color-mix(in srgb, var(--color-error) 80%, black);
+}
+
+.btn.icon-btn {
+    padding: var(--spacing-xs);
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-dark);
+    font-size: var(--font-size-lg); /* For emoji icons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.icon-btn:hover {
+    background-color: var(--color-neutral);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Ripple Effect (Conceptual - requires JS for actual wave) */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+.btn::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3); /* For primary */
+    width: 0;
+    height: 0;
+    transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.4s ease-out;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+.btn:active::after {
+    width: 200%;
+    height: 200%;
+    opacity: 1;
+}
+
+/* ----------------------------------------------------------------------------
+   4. Forms & Inputs (النماذج وحقول الإدخال)
+---------------------------------------------------------------------------- */
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="url"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group input[type="time"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-base);
+    color: var(--color-text-dark);
+    background-color: var(--color-background);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.form-group input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: var(--color-neutral);
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity var(--transition-speed);
+}
+.form-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    transition: background var(--transition-speed);
+}
+.form-group input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    transition: background var(--transition-speed);
+}
+.form-group input[type="range"] + span { /* Value display for range input */
+    display: block;
+    text-align: right;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    margin-top: var(--spacing-xs);
+}
+
+.form-group input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 40px; /* Small square for color picker */
+    height: 40px;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    padding: 0;
+    vertical-align: middle;
+}
+.form-group input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+.form-group input[type="color"]::-webkit-color-swatch { border: none; }
+.form-group input[type="color"]::-moz-color-swatch-wrapper { padding: 0; }
+.form-group input[type="color"]::-moz-color-swatch { border: none; }
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="url"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="time"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(47, 107, 255, 0.2); /* Primary color shadow */
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: var(--color-error);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Switch Toggle (for settings) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-border);
+    transition: .4s;
+    border-radius: 24px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: var(--color-primary);
+}
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+.slider.round {
+    border-radius: 24px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* ----------------------------------------------------------------------------
+   5. Layout & General Page Structure (التخطيط وهيكل الصفحة العام)
+---------------------------------------------------------------------------- */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-content {
+    flex: 1; /* Allow content to grow */
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px; /* Max width for larger screens */
+    margin: 0 auto;
+    width: 100%;
+}
+
+.app-page {
+    padding: var(--spacing-lg);
+    background-color: var(--color-background);
+    min-height: calc(100vh - 80px); /* Adjust based on header height */
+    transition: transform var(--transition-speed) var(--transition-timing-function);
+    width: 100%;
+}
+
+.app-page.hidden {
+    display: none; /* Controlled by JS for visibility */
+}
+
+/* Page transition effect - conceptual */
+.app-page.enter-from-right {
+    transform: translateX(100%);
+}
+.app-page.exit-to-left {
+    transform: translateX(-100%);
+}
+.app-page.enter-from-left {
+    transform: translateX(-100%);
+}
+.app-page.exit-to-right {
+    transform: translateX(100%);
+}
+.app-page.current {
+    transform: translateX(0);
+}
+
+
+/* ----------------------------------------------------------------------------
+   6. Header & Navigation (الرأس والتنقل)
+---------------------------------------------------------------------------- */
+.app-header {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.app-header h2 {
+    color: var(--color-background);
+    margin-bottom: 0;
+    font-size: var(--font-size-h3);
+}
+
+.main-nav {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.main-nav .nav-btn {
+    background: none;
+    border: none;
+    color: var(--color-background);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-base);
+    transition: background-color var(--transition-speed);
+}
+
+.main-nav .nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-nav .nav-btn.active {
+    background-color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+}
+
+/* ----------------------------------------------------------------------------
+   7. Login Page (صفحة تسجيل الدخول)
+---------------------------------------------------------------------------- */
+#login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    background-color: var(--color-neutral); /* Lighter background for login */
+    padding: var(--spacing-xl);
+}
+
+.login-container {
+    background-color: var(--color-background);
+    padding: var(--spacing-xxl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-container h1 {
+    color: var(--color-primary);
+    font-size: var(--font-size-h1);
+    margin-bottom: var(--spacing-md);
+}
+
+.login-container p {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xl);
+}
+
+#login-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+
+/* ----------------------------------------------------------------------------
+   8. Home Page (الشاشة الرئيسية)
+---------------------------------------------------------------------------- */
+#home-page {
+    text-align: center;
+    padding-top: var(--spacing-xxl);
+}
+
+#home-page h1 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-secondary);
+}
+
+#home-page p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xxl);
+}
+
+.quick-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+/* ----------------------------------------------------------------------------
+   9. QR Creation Wizard (معالج إنشاء رمز QR)
+---------------------------------------------------------------------------- */
+.qr-creation-wizard {
+    padding: var(--spacing-lg);
+}
+
+.qr-creation-step {
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-neutral);
+    margin-top: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    position: relative; /* For spinner positioning */
+}
+
+.qr-type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
+}
+
+.qr-type-card {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+}
+
+.qr-type-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.qr-type-card .icon {
+    font-size: 3em; /* Larger emoji icons */
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary); /* Style icon */
+}
+
+.qr-type-card .name {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary);
+    font-size: var(--font-size-sm);
+}
+
+/* Content Editor Specifics */
+#content-editor-title {
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary);
+}
+
+.dynamic-qr-options {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-md);
+    border: 1px dashed var(--color-primary);
+    border-radius: var(--border-radius-md);
+    background-color: color-mix(in srgb, var(--color-primary) 5%, transparent);
+}
+
+.dynamic-qr-options h4 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.dynamic-rule-card {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+.dynamic-rule-card select,
+.dynamic-rule-card input {
+    flex: 1; /* Allow inputs to take available space */
+    min-width: 120px;
+}
+.dynamic-rule-card .condition-details {
+    flex-basis: 100%; /* Take full width */
+    margin-top: var(--spacing-sm);
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+.dynamic-rule-card .delete-rule-btn {
+    background-color: var(--color-error);
+    color: white;
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    margin-left: auto; /* Push to right */
+}
+
+/* Design Editor Specifics */
+.design-layout {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-md);
+}
+
+.design-controls {
+    flex: 2; /* Takes more space */
+    min-width: 300px;
+}
+
+.qr-preview-container {
+    flex: 1; /* Takes remaining space */
+    min-width: 280px;
+    text-align: center;
+    background-color: var(--color-neutral);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-preview-container h4 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-secondary);
+}
+
+#qr-code-preview {
+    width: 256px; /* Fixed size for QR code preview */
+    height: 256px;
+    border: 1px solid var(--color-border);
+    margin-bottom: var(--spacing-md);
+    background-color: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* For logo positioning */
+    overflow: hidden; /* Ensure logo doesn't spill out */
+}
+
+#qr-code-preview img { /* Logo inside QR preview */
+    max-width: 30%; /* Max size for logo inside QR */
+    max-height: 30%;
+    object-fit: contain;
+    position: absolute;
+    z-index: 2; /* Above QR code canvas */
+}
+#qr-code-preview img.round {
+    border-radius: var(--border-radius-round);
+}
+
+.qr-preview-info {
+    margin-top: var(--spacing-sm);
+    max-width: 256px;
+    word-wrap: break-word;
+}
+.qr-preview-info h4 {
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: var(--color-secondary);
+}
+.qr-preview-info p {
+    font-size: var(--font-size-sm);
+    line-height: 1.4em;
+    color: var(--color-text-light);
+}
+
+/* ----------------------------------------------------------------------------
+   10. Scanner Module (وحدة المسح)
+---------------------------------------------------------------------------- */
+#scan-page {
+    text-align: center;
+}
+
+#reader {
+    width: 100%;
+    max-width: 600px;
+    height: 400px; /* Fixed height for the camera view */
+    background-color: black;
+    margin: var(--spacing-xl) auto;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden; /* Ensure camera feed fits */
+}
+
+/* html5-qrcode's viewfinder box style, if needed */
+.html5-qrcode-box-focus-area {
+    border: 2px solid var(--color-primary) !important;
+}
+
+.scan-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+/* ----------------------------------------------------------------------------
+   11. History & My QRs (التاريخ ورموزي)
+---------------------------------------------------------------------------- */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--spacing-md);
+}
+
+.tabs .tab-button {
+    background: none;
+    border: none;
+    padding: var(--spacing-md) var(--spacing-lg);
+    cursor: pointer;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    font-weight: var(--font-weight-bold);
+    transition: color var(--transition-speed), border-bottom-color var(--transition-speed);
+    border-bottom: 3px solid transparent;
+}
+
+.tabs .tab-button:hover {
+    color: var(--color-primary);
+}
+
+.tabs .tab-button.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+.item-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.history-item, .my-qr-item {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.history-item:hover, .my-qr-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.history-item h4, .my-qr-item h4 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-secondary);
+}
+
+.history-item .type, .my-qr-item .type {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xs);
+}
+
+.history-item .date, .my-qr-item .date {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+.history-item .actions, .my-qr-item .actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.filter-sort-bar {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.filter-sort-bar input,
+.filter-sort-bar select {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Favorite button active state */
+.favorite-btn.active {
+    color: gold; /* Yellow star */
+    background-color: color-mix(in srgb, gold 20%, transparent);
+    border-color: gold;
+}
+.favorite-btn.active:hover {
+    background-color: color-mix(in srgb, gold 30%, transparent);
+}
+
+
+/* ----------------------------------------------------------------------------
+   12. Settings Page (صفحة الإعدادات)
+---------------------------------------------------------------------------- */
+.settings-group {
+    background-color: var(--color-neutral);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.settings-group h3 {
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-item span {
+    color: var(--color-text-dark);
+    font-size: var(--font-size-lg);
+}
+
+/* Account management specific styles */
+#account-management-section {
+    background-color: color-mix(in srgb, var(--color-error) 5%, transparent);
+    border-color: var(--color-error);
+    margin-top: var(--spacing-xl);
+}
+#account-management-section h3 {
+    color: var(--color-error);
+}
+#account-management-section p {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-dark);
+}
+#current-user-name {
+    font-weight: var(--font-weight-bold);
+}
+
+
+/* ----------------------------------------------------------------------------
+   13. Utility Classes (فئات مساعدة)
+---------------------------------------------------------------------------- */
+.hidden {
+    display: none !important;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--color-text-light);
+    padding: var(--spacing-xxl);
+    font-size: var(--font-size-lg);
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-primary);
+}
+
+.back-btn {
+    margin-bottom: var(--spacing-md);
+    background: none;
+    border: none;
+    color: var(--color-secondary);
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: color var(--transition-speed);
+}
+.back-btn:hover {
+    color: var(--color-primary);
+}
+
+/* ----------------------------------------------------------------------------
+   14. Alerts & Spinners (التنبيهات والمؤشرات الدوارة)
+---------------------------------------------------------------------------- */
+.toast {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-text-dark);
+    color: var(--color-background);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 2000;
+    white-space: nowrap; /* Prevent message from wrapping */
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.toast.success { background-color: var(--color-accent); }
+.toast.error { background-color: var(--color-error); }
+.toast.info { background-color: var(--color-secondary); }
+
+/* Spinner */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--color-primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    position: fixed; /* For global spinner */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1500;
+}
+
+.spinner.small {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+    position: static; /* For inline spinner */
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: var(--spacing-sm);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* ----------------------------------------------------------------------------
+   15. Responsive Design (التصميم المتجاوب)
+---------------------------------------------------------------------------- */
+
+/* Small screens (e.g., mobile phones) */
+@media (max-width: 768px) {
+    .app-header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .main-nav .nav-btn {
+        flex-basis: 45%; /* Two buttons per row */
+        text-align: center;
+    }
+
+    #home-page .quick-actions {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    #home-page .quick-actions .btn {
+        width: 80%; /* Make buttons wider */
+        margin: 0 auto;
+    }
+
+    .qr-creation-step, .settings-group, .history-item, .my-qr-item {
+        padding: var(--spacing-md);
+    }
+
+    .design-layout {
+        flex-direction: column;
+    }
+    .design-controls, .qr-preview-container {
+        min-width: unset; /* Remove min-width for small screens */
+        width: 100%;
+    }
+
+    .filter-sort-bar {
+        flex-direction: column;
+    }
+    .filter-sort-bar input,
+    .filter-sort-bar select {
+        width: 100%;
+    }
+
+    .history-item, .my-qr-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+    .history-item .actions, .my-qr-item .actions {
+        width: 100%;
+        justify-content: space-around;
+    }
+}
+
+/* Medium screens (e.g., tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .app-content {
+        padding: 0 var(--spacing-md);
+    }
+    .main-nav {
+        gap: var(--spacing-md);
+    }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1025px) {
+    .app-content {
+        padding: 0 var(--spacing-xl);
+    }
+}
+
