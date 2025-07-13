@@ -1,879 +1,1067 @@
 /*
- * style.css - SeaStarQR Mobile App Design
+ * SeaStarQR - Modern & Innovative Mobile-like CSS Design
  *
- * This stylesheet is crafted to provide a modern, sleek, and intuitive user experience,
- * simulating a native mobile application. The design language emphasizes clarity,
- * professional aesthetics, and a subtle nod to technological sophistication.
+ * Designed to reflect a blend of clean Material Design principles with
+ * subtle Neomorphic touches, elegant gradients, and engaging micro-interactions.
+ * This stylesheet aims to deliver a visually stunning and highly intuitive
+ * user experience, showcasing a deep understanding of contemporary UI/UX.
  *
- * Key Design Principles:
- * - Clean & Minimalist: Focus on essential elements, reduce clutter.
- * - Vibrant & Engaging: Use a clear color palette with a primary accent.
- * - User-Centric: Intuitive navigation, clear feedback, comfortable touch targets.
- * - Responsive: Optimized for mobile-first, ensuring a seamless experience on small screens.
- * - Modern Typography: Legible and aesthetically pleasing fonts.
- * - Subtle Animations: Enhance user interaction without being distracting.
- *
- * Designed by a highly experienced professional in Technology & Design.
+ * Author: AI Design Assistant (Simulating expert design experience)
+ * Version: 2.0 (Enhanced from previous version)
+ * Language: Arabic (RTL support integrated)
  */
 
 /* ----------------------------------------------------------------------------
- * 0. Global Resets & Variables
- * ---------------------------------------------------------------------------- */
-:root {
-    /* Colors */
-    --primary-color: #2F6BFF; /* A vibrant, tech-inspired blue */
-    --primary-color-dark: #2257d4;
-    --accent-color: #00C853; /* Green for success/positive actions */
-    --danger-color: #FF5252; /* Red for destructive actions */
-    --background-light: #F8F9FA;
-    --background-dark: #FFFFFF;
-    --text-color-dark: #212529; /* Dark grey for main text */
-    --text-color-light: #6C757D; /* Lighter grey for secondary text */
-    --border-color: #E0E0E0;
-    --shadow-light: rgba(0, 0, 0, 0.08);
-    --shadow-medium: rgba(0, 0, 0, 0.15);
-
-    /* Typography */
-    --font-family-sans: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    --font-size-base: 16px;
-    --font-size-sm: 0.875rem;
-    --font-size-lg: 1.25rem;
-    --heading-font-weight: 600;
-
-    /* Spacing */
-    --spacing-xs: 8px;
-    --spacing-sm: 12px;
-    --spacing-md: 20px;
-    --spacing-lg: 32px;
-
-    /* Border Radius */
-    --border-radius-sm: 8px;
-    --border-radius-md: 12px;
-    --border-radius-lg: 20px;
-
-    /* Shadows */
-    --shadow-elevation-1: 0 2px 4px var(--shadow-light);
-    --shadow-elevation-2: 0 4px 8px var(--shadow-medium);
-}
-
-*, *::before, *::after {
+   1. Global Resets & Core Variables (إعادة تعيينات عالمية ومتغيرات أساسية)
+---------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+:root {
+    /* Color Palette - تدرجات لونية عصرية ومتقنة */
+    --color-primary-start: #6A11CB; /* Deep purple for main actions */
+    --color-primary-end: #2575FC;   /* Vibrant blue for primary gradient */
+    --color-secondary-dark: #1E2749; /* Darkest shade for deep contrast, text */
+    --color-secondary-light: #4A5C97; /* Lighter secondary for elements, headings */
+    --color-background-light: #F7F9FC; /* Near-white, soft background */
+    --color-background-medium: #E0E8F2; /* Subtle background for sections */
+    --color-accent-success: #38C76D; /* Green for success states */
+    --color-accent-warning: #FFC107; /* Yellow for warnings */
+    --color-accent-error: #FF4D4F; /* Red for errors */
+    --color-text-dark: #333C57; /* General dark text */
+    --color-text-light: #6E7B91; /* Lighter text for descriptions */
+    --color-border-soft: #D4DCE8; /* Soft border for elements */
+    --color-overlay-dark: rgba(30, 39, 73, 0.7); /* Dark overlay for modals/spinners */
+
+    /* Typography - خطوط حديثة وواضحة (استبدل بـ Google Fonts لنتائج أفضل) */
+    --font-family-primary: 'Cairo', 'Arial', sans-serif; /* Recommended: Google Fonts 'Cairo' or 'Rubik' for Arabic */
+    --font-family-secondary: 'Arial', sans-serif; /* Fallback for numbers/English if Cairo isn't suitable for all */
+    --font-size-base: 16px;
+    --font-size-sm: 0.9rem;
+    --font-size-lg: 1.1rem;
+    --font-size-xl: 1.3rem;
+    --font-size-h1: 2.5rem; /* Larger for impact */
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.5rem;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --line-height-base: 1.7em;
+
+    /* Spacing - تباعد متوازن لسهولة القراءة والجمالية */
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+    --spacing-xxxl: 64px;
+
+    /* Border Radius - زوايا مستديرة ناعمة */
+    --border-radius-sm: 6px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 20px;
+    --border-radius-circle: 50%;
+
+    /* Shadow - ظلال ثلاثية الأبعاد لإضفاء عمق */
+    --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft, subtle */
+    --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.1); /* More pronounced */
+    --shadow-deep: 0 15px 30px rgba(0, 0, 0, 0.15); /* For elevated elements */
+    --shadow-inset: inset 2px 2px 5px rgba(0, 0, 0, 0.05), inset -2px -2px 5px rgba(255, 255, 255, 0.7); /* For neomorphic feel */
+
+    /* Transitions - انتقالات سلسة وممتعة */
+    --transition-duration-fast: 0.2s;
+    --transition-duration-normal: 0.35s;
+    --transition-duration-slow: 0.5s;
+    --transition-easing-ease: ease;
+    --transition-easing-bounce: cubic-bezier(0.68, -0.55, 0.27, 1.55); /* For subtle bounce */
+
+    /* Animation - تأثيرات حركية خفيفة */
+    --animation-ripple-speed: 0.6s;
+    --animation-page-slide-speed: 0.5s;
+}
+
+/* ----------------------------------------------------------------------------
+   2. Base & Body Styling (تصميم الجسم الأساسي)
+---------------------------------------------------------------------------- */
 html, body {
-    font-family: var(--font-family-sans);
+    font-family: var(--font-family-primary);
     font-size: var(--font-size-base);
-    line-height: 1.6;
-    color: var(--text-color-dark);
-    background-color: var(--background-light);
-    -webkit-font-smoothing: antialiased;
+    line-height: var(--line-height-base);
+    color: var(--color-text-dark);
+    background: linear-gradient(135deg, var(--color-background-light) 0%, var(--color-background-medium) 100%); /* Soft background gradient */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Critical for page transitions */
+    -webkit-font-smoothing: antialiased; /* Smoother text rendering */
     -moz-osx-font-smoothing: grayscale;
-    height: 100%; /* Ensure body takes full viewport height */
-    overflow: hidden; /* Prevent body scroll, app-content handles it */
 }
 
 /* ----------------------------------------------------------------------------
- * 1. Layout & Global Structure (Mobile App Simulation)
- * ---------------------------------------------------------------------------- */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Ensures it's centered vertically */
-}
-
-#app-container { /* A wrapper to simulate phone screen */
-    width: 100%;
-    max-width: 450px; /* Typical phone width */
-    height: 100vh; /* Full viewport height */
-    max-height: 900px; /* Max height for larger screens */
-    background-color: var(--background-dark);
-    box-shadow: var(--shadow-elevation-2);
-    border-radius: var(--border-radius-lg);
-    overflow: hidden; /* Important for inner scrolling */
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-@media (min-width: 768px) {
-    #app-container {
-        height: 95vh; /* Slightly smaller for desktop view */
-        border-radius: var(--border-radius-lg);
-    }
-}
-
-.app-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto; /* Allow content to scroll */
-    padding-bottom: 70px; /* Space for fixed navigation bar */
-}
-
-.app-page {
-    padding: var(--spacing-md);
-    flex-shrink: 0; /* Prevent pages from shrinking */
-    width: 100%;
-    height: 100%; /* Ensure pages take full available height for content */
-    overflow-y: auto; /* Enable scrolling for individual pages */
-}
-
-.hidden {
-    display: none !important;
-}
-
-/* ----------------------------------------------------------------------------
- * 2. Typography & Headings
- * ---------------------------------------------------------------------------- */
+   3. Typography Enhancements (تحسينات الطباعة)
+---------------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: var(--heading-font-weight);
-    color: var(--text-color-dark);
-    margin-bottom: var(--spacing-sm);
+    color: var(--color-secondary-dark);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
     line-height: 1.2;
 }
 
-h1 { font-size: 2.2rem; margin-top: var(--spacing-lg); }
-h2 { font-size: 1.8rem; margin-top: var(--spacing-md); }
-h3 { font-size: 1.5rem; margin-top: var(--spacing-sm); }
-h4 { font-size: 1.2rem; }
-p { font-size: var(--font-size-base); margin-bottom: var(--spacing-xs); color: var(--text-color-light); }
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: var(--font-size-xl); color: var(--color-secondary-light); }
 
-.page-title {
-    text-align: center;
+p {
     margin-bottom: var(--spacing-md);
-    color: var(--primary-color);
-    font-weight: bold;
-    font-size: 1.8rem;
-    letter-spacing: 0.5px;
+    color: var(--color-text-light);
 }
 
-.empty-state {
-    text-align: center;
-    color: var(--text-color-light);
-    padding: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
-    border: 1px dashed var(--border-color);
-    border-radius: var(--border-radius-sm);
-    font-style: italic;
+a {
+    color: var(--color-primary-end);
+    text-decoration: none;
+    transition: color var(--transition-duration-fast) var(--transition-easing-ease);
+    font-weight: var(--font-weight-medium);
+}
+
+a:hover {
+    color: var(--color-primary-start);
 }
 
 /* ----------------------------------------------------------------------------
- * 3. Buttons & Interactive Elements
- * ---------------------------------------------------------------------------- */
+   4. Buttons - الأزرار (عصرية مع تأثيرات تفاعلية)
+---------------------------------------------------------------------------- */
 .btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    transition: background var(--transition-duration-normal) var(--transition-easing-ease),
+                box-shadow var(--transition-duration-normal) var(--transition-easing-ease),
+                transform 0.1s var(--transition-easing-ease);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing-xs) var(--spacing-md);
-    border: none;
-    border-radius: var(--border-radius-sm);
-    font-size: var(--font-size-base);
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    line-height: 1; /* For better vertical alignment of text/icons */
+    gap: var(--spacing-xs);
+    white-space: nowrap;
+    position: relative; /* For ripple effect */
+    overflow: hidden; /* For ripple effect */
+    letter-spacing: 0.5px; /* Subtle spacing */
+    box-shadow: var(--shadow-light); /* Initial soft shadow */
 }
 
-.btn:hover {
+.btn:active {
+    transform: translateY(1px); /* Gentle press effect */
+    box-shadow: var(--shadow-inset); /* Inset shadow for pressed feel */
+}
+
+/* Primary Button - الزر الأساسي بتدرج لوني جذاب */
+.btn.primary-btn {
+    background: linear-gradient(45deg, var(--color-primary-start), var(--color-primary-end));
+    color: var(--color-background-light);
+    box-shadow: 0 8px 20px rgba(37, 117, 252, 0.3); /* Stronger shadow for primary */
+}
+
+.btn.primary-btn:hover {
+    background: linear-gradient(45deg, var(--color-primary-end), var(--color-primary-start)); /* Invert gradient on hover */
+    box-shadow: 0 10px 25px rgba(37, 117, 252, 0.4);
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Secondary Button - زر ثانوي بتصميم نظيف */
+.btn.secondary-btn {
+    background-color: var(--color-background-light);
+    color: var(--color-secondary-light);
+    border: 1px solid var(--color-border-soft);
+    box-shadow: var(--shadow-light);
+}
+
+.btn.secondary-btn:hover {
+    background-color: var(--color-background-medium);
+    border-color: color-mix(in srgb, var(--color-primary-end) 30%, var(--color-border-soft));
+    box-shadow: var(--shadow-medium);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-elevation-1);
 }
 
-.primary-btn {
-    background-color: var(--primary-color);
-    color: var(--background-dark);
-    box-shadow: var(--shadow-elevation-1);
+/* Danger Button - زر الحذف/الخطر */
+.btn.danger-btn {
+    background-color: var(--color-accent-error);
+    color: var(--color-background-light);
+    box-shadow: 0 4px 15px rgba(255, 77, 79, 0.2);
 }
 
-.primary-btn:hover {
-    background-color: var(--primary-color-dark);
+.btn.danger-btn:hover {
+    background-color: color-mix(in srgb, var(--color-accent-error) 85%, black);
+    box-shadow: 0 6px 20px rgba(255, 77, 79, 0.3);
+    transform: translateY(-2px);
 }
 
-.secondary-btn {
-    background-color: var(--background-light);
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-}
-
-.secondary-btn:hover {
-    background-color: var(--primary-color);
-    color: var(--background-dark);
-}
-
-.danger-btn {
-    background-color: var(--danger-color);
-    color: var(--background-dark);
-}
-
-.danger-btn:hover {
-    background-color: #d63d3d;
-}
-
-.icon-btn {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
+/* Icon Button - زر الأيقونة */
+.btn.icon-btn {
     padding: var(--spacing-xs);
-    color: var(--text-color-light);
-    border-radius: 50%; /* Make them round */
-    width: 44px; /* Ensure sufficient touch target */
-    height: 44px; /* Ensure sufficient touch target */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    width: 44px; /* Larger touch target */
+    height: 44px;
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-border-soft);
+    color: var(--color-secondary-light);
+    border-radius: var(--border-radius-circle); /* Perfectly round */
+    font-size: var(--font-size-xl); /* Larger emoji icons */
+    box-shadow: var(--shadow-light);
 }
 
-.icon-btn:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: var(--primary-color);
-    transform: none; /* Override general button hover */
+.btn.icon-btn:hover {
+    background-color: var(--color-background-medium);
+    color: var(--color-primary-end);
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
     box-shadow: none;
-}
-
-.icon-btn.active {
-    color: var(--primary-color);
-    background-color: rgba(47, 107, 255, 0.1);
-}
-
-.back-btn {
-    background: none;
-    border: none;
-    color: var(--text-color-light);
-    font-size: var(--font-size-base);
-    padding: var(--spacing-xs) 0;
-    margin-bottom: var(--spacing-sm);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-}
-.back-btn:hover {
-    color: var(--primary-color);
     transform: none;
-    box-shadow: none;
 }
 
+/* Ripple Effect - تأثير التموج عند النقر */
+.btn::after {
+    content: '';
+    position: absolute;
+    border-radius: var(--border-radius-circle);
+    background-color: rgba(255, 255, 255, 0.5); /* White ripple for primary/danger */
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    transition: width var(--animation-ripple-speed) ease-out,
+                height var(--animation-ripple-speed) ease-out,
+                opacity var(--animation-ripple-speed) ease-out;
+    opacity: 0;
+    pointer-events: none; /* Ensure ripple doesn't block clicks */
+}
+.btn.secondary-btn::after, .btn.icon-btn::after {
+    background-color: rgba(0, 0, 0, 0.1); /* Darker ripple for light buttons */
+}
+
+/* JavaScript will add a class like 'ripple-active' on click */
+.btn.ripple-active::after {
+    width: 200%; /* Large enough to cover button */
+    height: 200%;
+    opacity: 1;
+}
 
 /* ----------------------------------------------------------------------------
- * 4. Forms & Inputs
- * ---------------------------------------------------------------------------- */
+   5. Forms & Inputs (النماذج وحقول الإدخال) - تصميم أنيق وعصري
+---------------------------------------------------------------------------- */
 .form-group {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    position: relative; /* For validation messages */
 }
 
 .form-group label {
     display: block;
-    margin-bottom: var(--spacing-xs);
-    font-weight: 500;
-    color: var(--text-color-dark);
+    margin-bottom: var(--spacing-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-secondary-light);
+    font-size: var(--font-size-sm);
+    transition: color var(--transition-duration-fast);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="url"],
-input[type="tel"],
-input[type="number"],
-input[type="time"],
-textarea,
-select {
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="url"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group input[type="time"],
+.form-group select,
+.form-group textarea {
     width: 100%;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-md) var(--spacing-lg); /* More padding */
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--border-radius-md);
     font-size: var(--font-size-base);
-    color: var(--text-color-dark);
-    background-color: var(--background-dark);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+    box-shadow: var(--shadow-light); /* Soft initial shadow */
+    transition: border-color var(--transition-duration-fast),
+                box-shadow var(--transition-duration-fast),
+                background-color var(--transition-duration-fast);
+    appearance: none; /* Reset default browser styles for consistency */
 }
 
-input[type="color"] {
-    width: 80px;
-    height: 40px;
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-sm);
-    padding: 0;
-    cursor: pointer;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="url"]:focus,
-input[type="tel"]:focus,
-input[type="number"]:focus,
-input[type="time"]:focus,
-textarea:focus,
-select:focus {
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="url"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="time"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary-end);
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(47, 107, 255, 0.2);
+    box-shadow: 0 0 0 4px rgba(37, 117, 252, 0.2); /* Vibrant focus shadow */
+    background-color: white; /* Brighter background on focus */
 }
 
-textarea {
-    min-height: 80px;
+.form-group input.error,
+.form-group textarea.error {
+    border-color: var(--color-accent-error);
+    box-shadow: 0 0 0 3px rgba(255, 77, 79, 0.2);
+}
+
+.form-group .error-message {
+    color: var(--color-accent-error);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-xs);
+    display: block;
+}
+
+.form-group textarea {
+    min-height: 100px;
     resize: vertical;
 }
 
-input.error, textarea.error, select.error {
-    border-color: var(--danger-color);
-    box-shadow: 0 0 0 3px rgba(255, 82, 82, 0.2);
-}
-
-input[type="range"] {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 8px;
-    background: var(--border-color);
-    border-radius: 5px;
-    outline: none;
-    opacity: 0.7;
-    transition: opacity .2s;
-    margin-top: var(--spacing-xs);
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    cursor: pointer;
-    box-shadow: var(--shadow-elevation-1);
-}
-
-input[type="range"]::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--primary-color);
-    cursor: pointer;
-    box-shadow: var(--shadow-elevation-1);
-}
-
-/* Checkbox group */
-.form-group input[type="checkbox"] {
-    width: auto;
-    margin-right: var(--spacing-xs);
-}
-.form-group input[type="checkbox"] + label {
-    display: inline-block;
-    margin-bottom: 0;
-    font-weight: normal;
-    color: var(--text-color-dark);
-}
-
-/* Select dropdown specific styling */
-select {
-    appearance: none; /* Remove default arrow */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236C757D'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+/* Select Box custom arrow */
+.form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236E7B91'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 20px;
-    padding-right: 30px; /* Make space for custom arrow */
+    background-position: left 12px center; /* Position arrow on the left for RTL */
+    padding-left: var(--spacing-xxl); /* Make space for the arrow */
+    padding-right: var(--spacing-md);
+    direction: rtl; /* Ensure text flows correctly with RTL */
+    text-align: right; /* Align text to the right */
+}
+.form-group select option {
+    direction: rtl;
+    text-align: right;
 }
 
+/* Range Slider - تصميم عصري لمقبض التمرير */
+.form-group input[type="range"] {
+    height: 10px; /* Thicker track */
+    background: linear-gradient(to right, var(--color-primary-end) 0%, var(--color-primary-end) var(--value, 50%), var(--color-border-soft) var(--value, 50%), var(--color-border-soft) 100%);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-inset); /* Inset shadow for track */
+}
+.form-group input[type="range"]::-webkit-slider-thumb {
+    width: 24px; /* Larger thumb */
+    height: 24px;
+    border-radius: var(--border-radius-circle);
+    background: linear-gradient(45deg, var(--color-primary-start), var(--color-primary-end));
+    box-shadow: 0 2px 8px rgba(37, 117, 252, 0.3); /* Subtle thumb shadow */
+    border: 3px solid var(--color-background-light); /* White ring */
+    cursor: grab;
+    transition: background var(--transition-duration-fast), box-shadow var(--transition-duration-fast), transform var(--transition-duration-fast);
+}
+.form-group input[type="range"]::-webkit-slider-thumb:active {
+    cursor: grabbing;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(37, 117, 252, 0.5);
+}
+.form-group input[type="range"]::-moz-range-thumb { /* Firefox */
+    width: 24px;
+    height: 24px;
+    border-radius: var(--border-radius-circle);
+    background: linear-gradient(45deg, var(--color-primary-start), var(--color-primary-end));
+    box-shadow: 0 2px 8px rgba(37, 117, 252, 0.3);
+    border: 3px solid var(--color-background-light);
+    cursor: grab;
+    transition: background var(--transition-duration-fast), box-shadow var(--transition-duration-fast), transform var(--transition-duration-fast);
+}
+.form-group input[type="range"]::-moz-range-thumb:active {
+    cursor: grabbing;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(37, 117, 252, 0.5);
+}
+
+.form-group input[type="range"] + span { /* Value display for range input */
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    margin-top: var(--spacing-xs);
+    text-align: right; /* RTL support */
+}
+
+/* Color Picker - مربع لون أنيق */
+.form-group input[type="color"] {
+    width: 50px; /* Slightly larger */
+    height: 50px;
+    border: 2px solid var(--color-border-soft);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-light);
+    transition: border-color var(--transition-duration-fast), box-shadow var(--transition-duration-fast);
+}
+.form-group input[type="color"]:focus {
+    border-color: var(--color-primary-end);
+    box-shadow: 0 0 0 4px rgba(37, 117, 252, 0.2);
+}
+
+/* Switch Toggle - مفتاح تبديل أنيق */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 56px; /* Wider switch */
+    height: 30px; /* Taller switch */
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-border-soft);
+    transition: var(--transition-duration-normal) ease;
+    border-radius: var(--border-radius-lg); /* Pill shape */
+    box-shadow: var(--shadow-inset);
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px; /* Thumb size */
+    width: 22px;
+    right: 4px; /* Position to right for RTL */
+    bottom: 4px;
+    background-color: white;
+    transition: var(--transition-duration-normal) ease;
+    border-radius: var(--border-radius-circle);
+    box-shadow: var(--shadow-light); /* Thumb shadow */
+}
+input:checked + .slider {
+    background: linear-gradient(45deg, var(--color-primary-start), var(--color-primary-end)); /* Gradient when checked */
+}
+input:checked + .slider:before {
+    transform: translateX(-26px); /* Move to left for RTL */
+}
 
 /* ----------------------------------------------------------------------------
- * 5. Specific Sections Styling
- * ---------------------------------------------------------------------------- */
-
-/* Login Page */
-#login-page {
+   6. Layout & Page Structure (التخطيط وهيكل الصفحة)
+---------------------------------------------------------------------------- */
+body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(135deg, var(--primary-color) 0%, #6a9aff 100%); /* Gradient background */
-    color: var(--background-dark);
-    padding: var(--spacing-lg);
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.login-container {
-    background-color: var(--background-dark);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-elevation-2);
+.app-content {
+    flex: 1; /* Allows content to expand */
+    display: flex;
+    flex-direction: column;
+    max-width: 900px; /* Optimized width for mobile-like apps */
     width: 100%;
-    max-width: 380px;
-    color: var(--text-color-dark); /* Ensure text is readable */
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg); /* Padding on sides */
 }
 
-.login-container h1 {
-    color: var(--primary-color);
-    font-size: 3rem;
-    margin-bottom: var(--spacing-xs);
-    font-weight: 700;
-    letter-spacing: -1px;
-}
-
-.login-container p {
-    color: var(--text-color-light);
-    margin-bottom: var(--spacing-lg);
-    font-size: var(--font-size-lg);
-}
-
-#login-buttons button {
-    margin: var(--spacing-xs) 0;
+.app-page {
+    background-color: var(--color-background-light);
+    border-radius: var(--border-radius-lg); /* Rounded corners for the "app screen" */
+    box-shadow: var(--shadow-deep); /* Stronger shadow for the main app container */
+    padding: var(--spacing-xxl); /* Generous padding inside pages */
+    min-height: calc(100vh - 100px); /* Adjust based on header/footer */
     width: 100%;
-    padding: var(--spacing-sm);
-    font-size: 1.1rem;
+    transform: translateX(0); /* Default position */
+    transition: transform var(--animation-page-slide-speed) cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Page transition with bounce */
+    position: absolute; /* Stack pages for transitions */
+    top: 0;
+    right: 0; /* RTL alignment */
+    bottom: 0;
+    left: 0;
+    margin: var(--spacing-xl) auto; /* Center the app view */
+    overflow-y: auto; /* Allow scrolling within the page */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
-/* App Header & Navigation */
+.app-page.hidden {
+    display: none !important; /* Hide physically for non-active pages */
+}
+
+/* Page Transition Animations - محاكاة انتقال شاشات التطبيق */
+.app-page.slide-enter-active,
+.app-page.slide-exit-active {
+    transition: transform var(--animation-page-slide-speed) var(--transition-easing-bounce);
+}
+
+.app-page.slide-enter-from-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+.app-page.slide-exit-to-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+.app-page.slide-enter-from-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+.app-page.slide-exit-to-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+.app-page.slide-current {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* ----------------------------------------------------------------------------
+   7. Header & Navigation (الرأس والتنقل) - تصميم جذاب ومدمج
+---------------------------------------------------------------------------- */
 .app-header {
-    background-color: var(--background-dark);
-    padding: var(--spacing-sm) var(--spacing-md);
-    box-shadow: var(--shadow-elevation-1);
+    background: linear-gradient(90deg, var(--color-secondary-dark), var(--color-secondary-light)); /* Darker gradient for header */
+    color: var(--color-background-light);
+    padding: var(--spacing-md) var(--spacing-lg);
     display: flex;
+    flex-direction: column; /* Stack on mobile */
+    justify-content: center; /* Center header content */
     align-items: center;
-    justify-content: space-between;
-    z-index: 10;
-    flex-shrink: 0; /* Prevent header from shrinking */
+    box-shadow: var(--shadow-deep);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom-left-radius: var(--border-radius-lg);
+    border-bottom-right-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-xl); /* Space below header */
 }
 
 .app-header h2 {
-    margin: 0;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    font-weight: 700;
+    color: var(--color-background-light);
+    margin-bottom: var(--spacing-md); /* Space between title and nav */
+    font-size: var(--font-size-h3);
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .main-nav {
     display: flex;
-    gap: var(--spacing-xs);
-    position: fixed; /* Fixed at the bottom */
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background-color: var(--background-dark);
-    box-shadow: 0 -2px 8px var(--shadow-light);
-    padding: var(--spacing-xs) 0;
-    justify-content: space-around;
-    z-index: 20;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center;
 }
 
-.nav-btn {
-    flex: 1;
+.main-nav .nav-btn {
+    background: rgba(255, 255, 255, 0.1); /* Subtle transparent background */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-background-light);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    font-size: var(--font-size-sm);
+    transition: background-color var(--transition-duration-fast), transform 0.1s;
+    box-shadow: var(--shadow-light);
+}
+
+.main-nav .nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.main-nav .nav-btn.active {
+    background: linear-gradient(45deg, var(--color-primary-start), var(--color-primary-end));
+    color: white;
+    font-weight: var(--font-weight-bold);
+    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
+    transform: translateY(-1px); /* Slight elevation */
+}
+
+/* ----------------------------------------------------------------------------
+   8. Home Page (الشاشة الرئيسية) - تصميم جذاب ومحفز
+---------------------------------------------------------------------------- */
+#home-page {
+    text-align: center;
+    padding-top: var(--spacing-xxl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#home-page h1 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary-start);
+    font-size: var(--font-size-h1);
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#home-page p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xxl);
+    line-height: 1.8;
+}
+
+.quick-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-lg);
+}
+
+/* ----------------------------------------------------------------------------
+   9. QR Creation Wizard (معالج إنشاء رمز QR) - تصميم منظم وسهل الاستخدام
+---------------------------------------------------------------------------- */
+.qr-creation-wizard {
+    /* Padding is handled by .app-page */
+}
+
+.qr-creation-step {
+    background-color: var(--color-background-medium); /* Slightly darker background for steps */
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    box-shadow: var(--shadow-medium);
+    position: relative;
+    overflow: hidden; /* For any internal overflow */
+}
+
+.qr-creation-step h3 {
+    text-align: center;
+    margin-bottom: var(--spacing-xxl);
+    color: var(--color-secondary-dark);
+    position: relative;
+}
+.qr-creation-step h3::after { /* Underline effect */
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary-start), var(--color-primary-end));
+    border-radius: 5px;
+}
+
+
+.qr-type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Adaptable grid */
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
+}
+
+.qr-type-card {
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    text-align: center;
+    cursor: pointer;
+    transition: transform var(--transition-duration-fast) var(--transition-easing-ease),
+                box-shadow var(--transition-duration-fast) var(--transition-easing-ease),
+                background-color var(--transition-duration-fast);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: none;
-    border: none;
-    color: var(--text-color-light);
-    font-size: var(--font-size-sm);
-    padding: var(--spacing-xs) 0;
-    cursor: pointer;
-    transition: color 0.2s ease, transform 0.2s ease;
-    min-width: 60px; /* Ensure enough space for touch */
-}
-
-.nav-btn:hover {
-    color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: none;
-}
-
-.nav-btn.active {
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
-.nav-btn::before { /* Placeholder for icons */
-    font-size: 1.2rem;
-    margin-bottom: 3px;
-    display: block;
-}
-
-/* Icon examples (replace with actual icon font/SVG) */
-#home-btn::before { content: '🏠'; }
-#create-qr-btn::before { content: '✨'; }
-#scan-qr-btn::before { content: '📷'; }
-#my-qrs-btn::before { content: '📊'; }
-#settings-btn::before { content: '⚙️'; }
-
-/* Logout button in header for desktop or when space allows */
-#logout-btn {
-    margin-left: var(--spacing-md);
-    padding: 6px 12px;
-    font-size: var(--font-size-sm);
-}
-
-/* Home Page */
-#home-page h1 {
-    text-align: center;
-    color: var(--primary-color);
-}
-#home-page p {
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-}
-.quick-actions {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-    padding: 0 var(--spacing-md);
-}
-.quick-actions .btn {
-    width: 100%;
-    padding: var(--spacing-sm);
-}
-
-/* Create QR Page Wizard */
-.qr-creation-wizard {
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Take full height of app-page */
-}
-.qr-creation-step {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto; /* Allow scrolling within steps */
-}
-
-/* QR Type Selection */
-.qr-type-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-md);
-}
-
-.qr-type-card {
-    background-color: var(--background-dark);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-md);
-    padding: var(--spacing-md);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: var(--shadow-elevation-1);
+    min-height: 140px;
+    box-shadow: var(--shadow-light);
 }
 
 .qr-type-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-elevation-2);
-    border-color: var(--primary-color);
+    box-shadow: var(--shadow-medium);
+    background-color: color-mix(in srgb, var(--color-primary-end) 5%, var(--color-background-light));
+}
+
+.qr-type-card.selected {
+    border-color: var(--color-primary-end);
+    box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.3); /* Ring on selection */
+    transform: scale(1.03);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-primary-start) 10%, transparent), color-mix(in srgb, var(--color-primary-end) 10%, transparent));
 }
 
 .qr-type-card .icon {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-xs);
-    color: var(--primary-color);
+    font-size: 3.5em; /* Larger, more expressive icons */
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary-end); /* Primary color for icons */
+    line-height: 1; /* Remove extra space */
 }
 
 .qr-type-card .name {
-    font-weight: 600;
-    font-size: var(--font-size-base);
-    color: var(--text-color-dark);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary-dark);
+    font-size: var(--font-size-sm);
 }
 
-/* Content Editor */
-#content-input-fields {
-    flex-grow: 1;
-    margin-bottom: var(--spacing-md);
+#next-to-content-btn, #next-to-design-btn, #save-qr-btn {
+    width: 100%;
+    margin-top: var(--spacing-xl);
+}
+
+/* Content Editor Specifics */
+#content-editor-title span {
+    color: var(--color-primary-end);
+    font-weight: var(--font-weight-bold);
 }
 
 .dynamic-qr-options {
-    background-color: var(--background-light);
-    border: 1px dashed var(--border-color);
-    border-radius: var(--border-radius-sm);
-    padding: var(--spacing-md);
-    margin-top: var(--spacing-md);
+    margin-top: var(--spacing-xxl);
+    padding: var(--spacing-xl);
+    border: 2px dashed var(--color-primary-end);
+    border-radius: var(--border-radius-md);
+    background-color: color-mix(in srgb, var(--color-primary-end) 5%, transparent);
+    box-shadow: var(--shadow-light);
 }
 
 .dynamic-qr-options h4 {
-    color: var(--primary-color);
-    margin-bottom: var(--spacing-xs);
-}
-
-.dynamic-qr-options p {
-    font-size: var(--font-size-sm);
-    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary-start);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
 }
 
 .dynamic-rule-card {
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-sm);
-    padding: var(--spacing-sm);
-    margin-bottom: var(--spacing-sm);
-    background-color: var(--background-dark);
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-xs);
+    gap: var(--spacing-sm);
     align-items: center;
+    box-shadow: var(--shadow-light);
 }
-
 .dynamic-rule-card select,
 .dynamic-rule-card input {
-    flex: 1;
-    min-width: 100px;
+    flex: 1; /* Allow inputs to take available space */
+    min-width: 150px; /* Minimum width for readability */
 }
-
 .dynamic-rule-card .condition-details {
-    flex-basis: 100%; /* Break to new line */
-    margin-top: var(--spacing-xs);
+    flex-basis: 100%; /* Take full width */
+    margin-top: var(--spacing-sm);
     display: flex;
-    gap: var(--spacing-xs);
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
 }
-.dynamic-rule-card .condition-details input {
-    flex: 1;
-}
-
 .dynamic-rule-card .delete-rule-btn {
-    background: none;
-    border: none;
-    color: var(--danger-color);
-    font-size: 1.2rem;
-    padding: 0;
-    margin-left: auto; /* Push to the right */
-    cursor: pointer;
-}
-.dynamic-rule-card .delete-rule-btn:hover {
-    color: #d63d3d;
+    margin-left: auto; /* Push to right */
+    padding: var(--spacing-xs);
+    width: 40px; /* Small square */
+    height: 40px;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-lg);
 }
 
-/* Design Editor */
+/* Design Editor Specifics */
 .design-layout {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    flex-grow: 1;
-    overflow-y: auto; /* Allow scrolling for design controls */
-}
-
-@media (min-width: 600px) { /* Adjust for larger tablet/desktop views */
-    .design-layout {
-        flex-direction: row;
-    }
-    .design-controls {
-        flex: 2; /* Takes more space */
-        min-width: 300px;
-    }
-    .qr-preview-container {
-        flex: 1;
-        min-width: 280px;
-    }
+    flex-wrap: wrap;
+    gap: var(--spacing-xxl);
+    margin-top: var(--spacing-lg);
+    justify-content: center; /* Center items in layout */
+    align-items: flex-start;
 }
 
 .design-controls {
-    background-color: var(--background-light);
-    border-radius: var(--border-radius-md);
-    padding: var(--spacing-md);
+    flex: 2; /* Takes more space */
+    min-width: 300px;
+    max-width: 450px;
 }
 
 .qr-preview-container {
-    background-color: var(--background-light);
-    border-radius: var(--border-radius-md);
-    padding: var(--spacing-md);
+    flex: 1; /* Takes remaining space */
+    min-width: 300px;
+    max-width: 350px;
+    text-align: center;
+    background-color: var(--color-background-light);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-border-soft);
+    box-shadow: var(--shadow-medium);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-elevation-1);
-    text-align: center;
-    flex-shrink: 0; /* Prevent shrinking if content is large */
 }
 
 .qr-preview-container h4 {
-    margin-top: 0;
-    margin-bottom: var(--spacing-sm);
-    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-secondary-dark);
 }
 
-.qr-code-preview {
-    position: relative;
-    width: 280px; /* Fixed size for preview */
+#qr-code-preview {
+    width: 280px; /* Larger fixed size for QR code preview */
     height: 280px;
+    border: 2px dashed var(--color-primary-start); /* Dashed border for preview */
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-md);
+    background-color: white; /* Pure white background for QR */
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--background-dark);
-    border-radius: var(--border-radius-sm);
-    padding: var(--spacing-xs); /* Padding around QR code for better visual */
-    box-shadow: inset 0 0 0 1px var(--border-color); /* Inner border */
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M9 10L6 7l3-3V0l-3 3-3-3H0l3 3-3 3h3l3 3v-3z'/%3E%3C/g%3E%3C/svg%3E"); /* Subtle pattern */
 }
 
-.qr-code-preview canvas,
-.qr-code-preview img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-}
-
-.qr-code-preview img { /* Logo overlay */
+#qr-code-preview img {
+    max-width: 30%; /* Max size for logo inside QR */
+    max-height: 30%;
+    object-fit: contain;
     position: absolute;
-    z-index: 1;
-    object-fit: cover;
-    border: 3px solid var(--background-dark); /* Border to separate from QR */
-    box-shadow: var(--shadow-elevation-1);
+    z-index: 2;
+    background-color: white; /* Ensure logo background is white for contrast */
+    border: 2px solid white; /* White border around logo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow for logo */
+}
+#qr-code-preview img.round {
+    border-radius: var(--border-radius-circle);
 }
 
 .qr-preview-info {
     margin-top: var(--spacing-sm);
-    width: 100%;
-    text-align: center;
-}
-
-.qr-preview-info h4 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    color: var(--text-color-dark);
-}
-
-.qr-preview-info p {
+    max-width: 280px;
+    word-wrap: break-word;
     font-size: var(--font-size-sm);
-    color: var(--text-color-light);
+    color: var(--color-text-light);
+    line-height: 1.4;
+}
+.qr-preview-info h4 {
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-base);
+    color: var(--color-secondary-light);
 }
 
-/* Scan Page */
-#reader {
-    width: 100% !important;
-    height: 300px !important; /* Fixed height for scanner view */
-    max-width: 100%;
-    margin: 0 auto var(--spacing-md);
-    border-radius: var(--border-radius-md);
-    overflow: hidden;
-    background-color: #000; /* Black background for scanner */
+/* ----------------------------------------------------------------------------
+   10. Scanner Module (وحدة المسح) - تصميم وظيفي وجذاب
+---------------------------------------------------------------------------- */
+#scan-page {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-#reader video {
-    object-fit: cover;
+
+#reader {
+    width: 100%;
+    max-width: 600px;
+    height: 400px; /* Generous height for camera view */
+    background-color: var(--color-secondary-dark); /* Dark background for camera */
+    margin: var(--spacing-xxl) auto var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-deep);
+    position: relative; /* For scanner animations/overlays */
+}
+
+/* Scanner viewfinder styling (for html5-qrcode library, adjust as needed) */
+.html5-qrcode-box-focus-area {
+    border: 3px solid var(--color-accent-success) !important; /* Vibrant green focus */
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 0 0 5px rgba(56, 199, 109, 0.3); /* Green glow */
 }
 
 .scan-controls {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
     margin-top: var(--spacing-md);
 }
 
-/* History & My QRs Pages */
+.scan-result {
+    margin-top: var(--spacing-xxl);
+    padding: var(--spacing-lg);
+    background-color: var(--color-background-medium);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-medium);
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.scan-result h3 {
+    color: var(--color-secondary-dark);
+    margin-bottom: var(--spacing-md);
+}
+.scan-result p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-dark);
+    word-break: break-all; /* Ensure long URLs wrap */
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ----------------------------------------------------------------------------
+   11. History & My QRs (التاريخ ورموزي) - تصميم قوائم واضح ومنظم
+---------------------------------------------------------------------------- */
 .tabs {
     display: flex;
-    justify-content: center;
-    margin-bottom: var(--spacing-md);
-    border-bottom: 1px solid var(--border-color);
-    background-color: var(--background-dark);
-    border-radius: var(--border-radius-sm);
-    box-shadow: var(--shadow-elevation-1);
-    padding: 5px;
+    background-color: var(--color-background-medium);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-light);
+    overflow: hidden; /* For rounded corners */
 }
 
-.tab-button {
-    flex: 1;
-    padding: var(--spacing-xs) var(--spacing-sm);
+.tabs .tab-button {
+    flex: 1; /* Distribute space evenly */
     background: none;
     border: none;
-    font-size: var(--font-size-base);
-    font-weight: 500;
-    color: var(--text-color-light);
+    padding: var(--spacing-md) var(--spacing-lg);
     cursor: pointer;
-    transition: all 0.2s ease;
-    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    font-weight: var(--font-weight-medium);
+    transition: all var(--transition-duration-fast) var(--transition-easing-ease);
+    border-bottom: 3px solid transparent; /* Animated border */
+    position: relative;
+    z-index: 1; /* Above any pseudo-elements */
 }
 
-.tab-button.active {
-    background-color: var(--primary-color);
-    color: var(--background-dark);
-    box-shadow: var(--shadow-elevation-1);
-    transform: translateY(-2px);
+.tabs .tab-button:hover {
+    color: var(--color-primary-end);
+    background-color: var(--color-background-light);
 }
 
-.tab-button:hover:not(.active) {
-    color: var(--primary-color);
-    background-color: rgba(47, 107, 255, 0.05);
+.tabs .tab-button.active {
+    color: var(--color-primary-end);
+    font-weight: var(--font-weight-bold);
+    background-color: var(--color-background-light);
+    box-shadow: var(--shadow-inset); /* Inner shadow for active tab */
+    border-color: var(--color-primary-end); /* Primary border for active */
 }
 
-.item-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
+.tab-content {
+    background-color: var(--color-background-light);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-medium);
+    margin-top: var(--spacing-lg); /* Space between tabs and content */
 }
 
-.history-item, .my-qr-item {
-    background-color: var(--background-dark);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-sm);
-    padding: var(--spacing-sm);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: var(--shadow-elevation-1);
-}
-
-.history-item h4, .my-qr-item h4 {
-    margin-bottom: 5px;
-    font-size: 1.1rem;
-    color: var(--primary-color);
-}
-
-.history-item .type, .my-qr-item .type {
-    font-size: var(--font-size-sm);
-    color: var(--text-color-dark);
-    font-weight: 500;
-}
-.history-item .date, .my-qr-item .date {
-    font-size: var(--font-size-sm);
-    color: var(--text-color-light);
-}
-
-.item-list .actions {
-    display: flex;
-    gap: 5px;
-}
-
-/* My QRs Filter & Search */
 .filter-sort-bar {
     display: flex;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
-    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    background-color: var(--color-background-medium);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-light);
 }
 
 .filter-sort-bar input,
 .filter-sort-bar select {
     flex: 1;
-    min-width: 150px;
-    max-width: 100%;
+    min-width: 180px;
+    font-size: var(--font-size-sm);
 }
 
-/* Settings Page */
-.settings-group {
-    background-color: var(--background-dark);
+.item-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.history-item, .my-qr-item {
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-border-soft);
     border-radius: var(--border-radius-md);
-    padding: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    box-shadow: var(--shadow-elevation-1);
+    padding: var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-light);
+    transition: transform var(--transition-duration-fast) var(--transition-easing-ease),
+                box-shadow var(--transition-duration-fast) var(--transition-easing-ease);
+}
+
+.history-item:hover, .my-qr-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.history-item h4, .my-qr-item h4 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-secondary-dark);
+    font-size: var(--font-size-lg);
+}
+
+.history-item .type, .my-qr-item .type {
+    font-size: var(--font-size-sm);
+    color: var(--color-primary-end);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-xs);
+}
+
+.history-item .date, .my-qr-item .date {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+.history-item .actions, .my-qr-item .actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+/* Favorite button active state */
+.favorite-btn.active {
+    color: var(--color-accent-warning); /* Gold star */
+    background-color: color-mix(in srgb, var(--color-accent-warning) 20%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent-warning) 50%, transparent);
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
+}
+.favorite-btn.active:hover {
+    background-color: color-mix(in srgb, var(--color-accent-warning) 30%, transparent);
+}
+
+/* ----------------------------------------------------------------------------
+   12. Settings Page (صفحة الإعدادات) - تصميم مرتب وسهل التعديل
+---------------------------------------------------------------------------- */
+.settings-group {
+    background-color: var(--color-background-medium);
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xxl);
+    box-shadow: var(--shadow-medium);
 }
 
 .settings-group h3 {
-    color: var(--primary-color);
-    margin-top: 0;
-    margin-bottom: var(--spacing-md);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: var(--spacing-xs);
+    color: var(--color-primary-start);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    position: relative;
 }
+.settings-group h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--color-primary-end);
+    border-radius: 5px;
+}
+
 
 .setting-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--color-border-soft);
     margin-bottom: var(--spacing-sm);
-    padding: var(--spacing-xs) 0;
-    border-bottom: 1px dashed var(--border-color);
 }
 
 .setting-item:last-child {
@@ -882,93 +1070,163 @@ select {
 }
 
 .setting-item span {
-    font-size: var(--font-size-base);
-    color: var(--text-color-dark);
+    color: var(--color-text-dark);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
 }
 
-.settings-group .btn {
+/* Account management specific styles */
+#account-management-section {
+    background-color: color-mix(in srgb, var(--color-accent-error) 5%, transparent);
+    border-color: var(--color-accent-error);
+    margin-top: var(--spacing-xxl);
+}
+#account-management-section h3 {
+    color: var(--color-accent-error);
+}
+#account-management-section h3::after {
+    background: var(--color-accent-error);
+}
+#account-management-section p {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-dark);
+}
+#current-user-name {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary-dark);
+}
+#logout-btn, #delete-account-btn {
+    margin-top: var(--spacing-md);
     width: 100%;
-    margin-top: var(--spacing-sm);
-    padding: var(--spacing-sm);
+}
+#delete-account-btn {
+    background-color: var(--color-secondary-light); /* Different secondary for delete */
+}
+#delete-account-btn:hover {
+    background-color: var(--color-accent-error);
 }
 
-/* Toggle Switch (taken from common UI patterns) */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 28px;
+/* ----------------------------------------------------------------------------
+   13. Utility Classes (فئات مساعدة)
+---------------------------------------------------------------------------- */
+.hidden {
+    display: none !important;
 }
 
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.empty-state {
+    text-align: center;
+    color: var(--color-text-light);
+    padding: var(--spacing-xxl);
+    font-size: var(--font-size-lg);
+    background-color: var(--color-background-medium);
+    border-radius: var(--border-radius-md);
+    margin-top: var(--spacing-lg);
+    box-shadow: var(--shadow-light);
 }
 
-.slider {
-    position: absolute;
+.page-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-secondary-dark);
+    font-size: var(--font-size-h2);
+    letter-spacing: 1px;
+}
+
+.back-btn {
+    margin-bottom: var(--spacing-lg);
+    background: none;
+    border: none;
+    color: var(--color-secondary-light);
+    font-size: var(--font-size-lg);
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--border-color);
-    transition: .4s;
-    border-radius: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: color var(--transition-duration-fast), transform 0.1s;
+    font-weight: var(--font-weight-medium);
+}
+.back-btn:hover {
+    color: var(--color-primary-end);
+    transform: translateX(3px); /* Slide slightly on hover */
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-    box-shadow: var(--shadow-elevation-1);
+/* Flex utilities */
+.d-flex { display: flex; }
+.justify-content-center { justify-content: center; }
+.align-items-center { align-items: center; }
+.flex-column { flex-direction: column; }
+.gap-md { gap: var(--spacing-md); }
+
+/* Margin/Padding utilities (adjust as needed) */
+.mb-xs { margin-bottom: var(--spacing-xs); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+.mt-xs { margin-top: var(--spacing-xs); }
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+
+/* ----------------------------------------------------------------------------
+   14. Alerts & Spinners (التنبيهات والمؤشرات الدوارة)
+---------------------------------------------------------------------------- */
+.toast {
+    position: fixed;
+    bottom: var(--spacing-xxl);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-secondary-dark);
+    color: var(--color-background-light);
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-deep);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s var(--transition-easing-ease), transform 0.4s var(--transition-easing-ease);
+    z-index: 2000;
+    white-space: nowrap;
+    font-size: var(--font-size-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
-input:checked + .slider {
-    background-color: var(--accent-color);
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-10px); /* Slight lift */
 }
 
-input:focus + .slider {
-    box-shadow: 0 0 1px var(--accent-color);
-}
+.toast.success { background-color: var(--color-accent-success); }
+.toast.error { background-color: var(--color-accent-error); }
+.toast.info { background-color: var(--color-primary-end); }
 
-input:checked + .slider:before {
-    transform: translateX(22px);
-}
-
-/* Spinners & Toasts */
+/* Spinner - تصميم دوار جذاب */
 .spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-left-color: var(--primary-color);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-    position: fixed; /* Center over content */
+    border: 5px solid rgba(255, 255, 255, 0.3); /* Lighter border */
+    border-top: 5px solid var(--color-primary-end); /* Vibrant top border */
+    border-radius: var(--border-radius-circle);
+    width: 50px; /* Larger spinner */
+    height: 50px;
+    animation: spin var(--transition-duration-normal) linear infinite;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 100; /* Above all other content */
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: 1500;
+    box-shadow: var(--shadow-medium);
 }
 
 .spinner.small {
-    width: 20px;
-    height: 20px;
-    border-width: 2px;
-    position: static; /* For inline spinners */
-    transform: none;
-    background: none;
+    width: 25px;
+    height: 25px;
+    border-width: 3px;
+    position: static;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: var(--spacing-sm); /* Adjusted for RTL */
 }
 
 @keyframes spin {
@@ -976,38 +1234,174 @@ input:checked + .slider:before {
     100% { transform: rotate(360deg); }
 }
 
-.toast {
-    visibility: hidden; /* Hidden by default */
-    min-width: 250px;
-    background-color: var(--text-color-dark);
-    color: var(--background-dark);
-    text-align: center;
-    border-radius: var(--border-radius-sm);
-    padding: 10px 20px;
-    position: fixed;
-    z-index: 100;
-    left: 50%;
-    bottom: 30px;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.5s, visibility 0.5s;
-    font-size: var(--font-size-sm);
-    box-shadow: var(--shadow-elevation-2);
+/* ----------------------------------------------------------------------------
+   15. Responsive Design (التصميم المتجاوب) - لمختلف الأجهزة
+---------------------------------------------------------------------------- */
+
+/* Small screens (mobile phones) */
+@media (max-width: 768px) {
+    :root {
+        --font-size-h1: 2rem;
+        --font-size-h2: 1.8rem;
+        --font-size-h3: 1.3rem;
+        --spacing-lg: 20px;
+        --spacing-xl: 24px;
+        --spacing-xxl: 32px;
+    }
+
+    .app-header {
+        padding: var(--spacing-md) var(--spacing-sm);
+        border-radius: 0; /* No radius on header for full width mobile */
+        margin-bottom: var(--spacing-lg);
+    }
+    .app-header h2 {
+        margin-bottom: var(--spacing-sm);
+    }
+    .main-nav {
+        gap: var(--spacing-xs);
+        width: 100%;
+    }
+    .main-nav .nav-btn {
+        flex-basis: calc(50% - var(--spacing-xs) / 2); /* Two buttons per row */
+        font-size: var(--font-size-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .app-content {
+        padding: 0 var(--spacing-sm);
+    }
+    .app-page {
+        padding: var(--spacing-xl);
+        min-height: calc(100vh - 80px); /* Adjust for smaller header */
+        border-radius: var(--border-radius-md);
+        margin: var(--spacing-md) auto;
+    }
+
+    #home-page .quick-actions {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    #home-page .quick-actions .btn {
+        width: 90%; /* Wider buttons for mobile */
+        margin: 0 auto;
+    }
+
+    .qr-creation-step {
+        padding: var(--spacing-lg);
+        margin-top: var(--spacing-lg);
+    }
+    .qr-creation-step h3 {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .qr-type-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller cards */
+        gap: var(--spacing-sm);
+    }
+    .qr-type-card {
+        min-height: 100px;
+        padding: var(--spacing-sm);
+    }
+    .qr-type-card .icon {
+        font-size: 2.5em;
+    }
+    .qr-type-card .name {
+        font-size: var(--font-size-xxs); /* Smaller text for card name */
+    }
+
+    .design-layout {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+    .design-controls, .qr-preview-container {
+        min-width: unset;
+        max-width: 100%;
+        width: 100%;
+    }
+    #qr-code-preview {
+        width: 200px; /* Smaller QR preview */
+        height: 200px;
+    }
+
+    #reader {
+        height: 300px; /* Adjust scanner height */
+        margin: var(--spacing-xl) auto var(--spacing-md);
+    }
+
+    .tabs {
+        flex-wrap: wrap; /* Allow tabs to wrap */
+        border-radius: var(--border-radius-md);
+    }
+    .tabs .tab-button {
+        flex-basis: 50%; /* Two tabs per row if needed */
+        font-size: var(--font-size-sm);
+        padding: var(--spacing-sm);
+    }
+
+    .filter-sort-bar {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-sm);
+    }
+    .filter-sort-bar input,
+    .filter-sort-bar select {
+        width: 100%;
+    }
+
+    .history-item, .my-qr-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+    }
+    .history-item .actions, .my-qr-item .actions {
+        width: 100%;
+        justify-content: space-around;
+        margin-top: var(--spacing-md);
+    }
+
+    .setting-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+    .setting-item span {
+        width: 100%;
+        margin-bottom: var(--spacing-xs);
+    }
+    .setting-item select {
+        width: 100%;
+    }
 }
 
-.toast.info { background-color: var(--text-color-dark); }
-.toast.success { background-color: var(--accent-color); }
-.toast.error { background-color: var(--danger-color); }
-
-.toast.show {
-    visibility: visible;
-    opacity: 1;
+/* Medium screens (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .app-content {
+        padding: 0 var(--spacing-xl);
+        max-width: 800px;
+    }
+    .app-page {
+        padding: var(--spacing-xxl) var(--spacing-xl);
+    }
+    .main-nav {
+        gap: var(--spacing-md);
+    }
+    .main-nav .nav-btn {
+        padding: var(--spacing-sm) var(--spacing-lg);
+    }
+    .qr-type-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
 }
 
-/* General spacing for buttons at the bottom of forms/pages */
-.qr-creation-step > .btn,
-.app-page > .btn {
-    margin-top: var(--spacing-md);
-    width: 100%;
+/* Large screens (desktops) - Ensure responsiveness for wider views */
+@media (min-width: 1025px) {
+    .app-content {
+        padding: 0 var(--spacing-xxl);
+        max-width: 960px; /* Slightly wider for large screens */
+    }
+    .app-page {
+        padding: var(--spacing-xxl);
+    }
 }
 
